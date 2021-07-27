@@ -1,0 +1,35 @@
+header 
+{
+    background-color: #f3e9f1;
+}
+
+header .logo img
+{
+    width: 13em;
+}
+
+header .titre
+{
+    margin-top: 1em;
+    color: rgb(182, 83, 253);
+    font-family: Shrikhand;
+}
+
+header .titre h1
+{
+    font-size: 3.5em;
+}
+
+header .panier img
+{
+    height: 3em;
+    margin: 1.5em;
+}
+
+.row .col h2
+{
+    margin-top: 1em;
+    font-size: 3em;
+    color: rgb(255,165,0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
