@@ -1,1 +1,58 @@
-good
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap" rel="stylesheet"> 
+
+      <script src="https://kit.fontawesome.com/2aa7d080bb.js" crossorigin="anonymous"></script>
+
+      <title>Orinoco</title>
+
+  </head>
+
+<!-- Corps de page -->
+  <body>
+<!-- logo + Présentation + Panier -->
+    <div class="container-fluid">
+      <header class="row">
+<!-- logo -->
+        <div class="col-md-5 logo">  
+          <a href="index.html">                       
+            <img src="images/logo.png" alt="logo orinoco" />
+          </a>
+        </div>
+<!-- Titre -->
+        <div class="col-md-6 titre">
+          <h1>Orinoco</h1>
+        </div>
+<!-- Images Panier + Lien -->
+        <div class="col-md-1 panier">
+          <a href="panier.html">            
+            <img src="images/panier.png" alt="panier orinoco" />
+          </a>
+        </div>
+      </header>
+<!-- Le Panier -->
+        <main class="row text-center le-panier">
+            <section class="col">
+                <h2>Votre Panier</h2>
+                    <div class="d-flex flex-row justify-content-around">                
+                        <h3 class="col-md-2">Article</h3>
+                        <h3 class="col-md-2">Quantité</h3>
+                        <h3 class="col-md-2">Prix</h3>
+                    </div>
+                <!-- Prix Total et vider le panier -->
+                <div class="d-flex flex-column align-items-center vider-panier ">
+                    <button type="button" class="btn btn-primary btn-l">Vider le Panier <i class="fas fa-trash-alt"></i></button>
+                </div>
+            </section>
+        </main>
+
+    </div>
+  </body>
+</html>

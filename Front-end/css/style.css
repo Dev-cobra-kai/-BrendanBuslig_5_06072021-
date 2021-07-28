@@ -33,3 +33,20 @@ header .panier img
     color: rgb(255,165,0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+main
+{
+    background-color: #f3e9f1;
+    margin-top: 3em;
+}
+
+.le-panier .col h2
+{
+    margin: 1em;
+}
+
+.le-panier .col .vider-panier
+{
+    margin: 2em;
+}
+
