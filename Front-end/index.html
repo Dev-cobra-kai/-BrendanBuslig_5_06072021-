@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="stylesheet" href="css/bootstrap.css">
-      <link rel="stylesheet" href="css/style.css">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap" rel="stylesheet"> 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <script src="https://kit.fontawesome.com/2aa7d080bb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap"
+    rel="stylesheet">
 
-      <title>Orinoco</title>
+  <script src="https://kit.fontawesome.com/2aa7d080bb.js" crossorigin="anonymous"></script>
 
-  </head>
+  <title>Orinoco</title>
+
+</head>
 
 <!-- Corps de page -->
-  <body>
-<!-- logo + Présentation + Panier -->
-    <div class="container-fluid">
-      <header class="row d-flex flex-row justify-content-around">
-<!-- logo -->
-        <div class="col-md-5 col-sm-5 logo">  
-          <a href="index.html">                       
-            <img src="images/logo.png" alt="logo orinoco" />
-          </a>
-        </div>
-<!-- Titre -->
-        <div class="col-md-6 col-sm-6 titre">
-          <h1>Orinoco</h1>
-        </div>
-<!-- Panier -->
-        <div class="col-md-1 col-sm-1 panier">
-          <a href="panier.html">            
-            <img src="images/panier.png" alt="panier orinoco" />
-          </a>
-        </div>
-      </header>
-<!-- Présentation -->
-      <section class="row">
-        <div class="col text-center">
-            <h2>Choisissez le Nounours <br>
-              Adaptez à votre personnalité
-            </h2>
-        </div>
-      </section>
 
-
+<body>
+  <!-- logo + Présentation + Panier -->
+  <div class="container-fluid">
+    <header class="row d-flex flex-row justify-content-around">
+      <!-- logo -->
+      <div class="col-md-5 col-sm-5 logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="logo orinoco" />
+        </a>
+      </div>
+      <!-- Titre -->
+      <div class="col-md-6 col-sm-6 titre">
+        <h1>Orinoco</h1>
+      </div>
+      <!-- Panier -->
+      <div class="col-md-1 col-sm-1 panier">
+        <a href="html/panier.html">
+          <img src="images/panier.png" alt="panier orinoco" />
+        </a>
+      </div>
+    </header>
+    <!-- Présentation -->
+    <section class="row">
+      <div class="col text-center">
+        <h2>Choisissez le Nounours <br>
+          Adaptez à votre personnalité
+        </h2>
+      </div>
+    </section>
+    <!-- Les Produits  -->
+    <main class="main" id="main">
+      <div class="col-12 col-sm-7 d-flex justify-content-center my-3 box-container">
+        <div id="id"></div>
+        <div id="name"></div>
+        <div id="price"></div>
+        <div id="description"></div>
+        <div id="imageUrl"></div>
+      </div>
+    </main>
+  </div>
+  <!-- Pied de page -->
+  <footer class="row">
+    <div class="col-12 col-md-6">
+      <h3 class="text-center">À propos</h3>
+      <ul>
+        <li>Fonctionnement du site</li>
+        <li>Conditions générales de vente</li>
+        <li>Données et confidentialité</li>
+      </ul>
     </div>
-  </body>
+    <div class="col-12 col-md-6">
+      <h3 class="text-center">Assistance</h3>
+      <ul>
+        <li>Centre d'aide</li>
+        <li>Nous contacter</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/index.js"></script>
+
+</body>
+
 </html>

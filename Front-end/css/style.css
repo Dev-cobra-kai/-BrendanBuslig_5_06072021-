@@ -1,3 +1,5 @@
+/* ENTETE DE PAGE */
+
 header 
 {
     background-color: #f3e9f1;
@@ -26,12 +28,22 @@ header .panier img
     margin: 1.5em;
 }
 
+/* CORPS DE PAGE */
+
+/* Panier */
+
 .row .col h2
 {
     margin-top: 1em;
-    font-size: 3em;
+    font-size: 2.5em;
     color: rgb(255,165,0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.row form h3
+{
+    color: rgb(255,165,0);
+    padding-top: 1em;
 }
 
 main
@@ -42,7 +54,7 @@ main
 
 .le-panier .col h2
 {
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .le-panier .col .vider-panier
@@ -50,3 +62,70 @@ main
     margin: 2em;
 }
 
+/* Formulaire */
+
+.formulaire
+{
+    background-color: #fff;     
+    justify-content: center;
+}
+
+.le-formulaire h3
+{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.form-group input
+{
+    border-radius: 25px;
+    width: 20em;   
+    padding: 1em;
+}
+
+.formulaire .form-group 
+{
+    padding: 1em;
+    font-size: 1.2em;
+}
+
+/* Bouton Commander */
+
+.btn-commander
+{
+    border-radius: 50px;    
+    font-size: 1em;
+    padding: 1em 4em 1em 4em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transform: scale(1);
+} 
+.btn-commander:hover 
+{
+    transform: scale(1.05);       
+    cursor: pointer;
+}
+
+/* PIED DE PAGE */
+
+footer
+{
+    margin-top: 2em;
+    background-color: #f3e9f1;  
+    padding-top: 1em;  
+    width: 100%; 
+}
+
+footer h3
+{
+    color: rgb(182, 83, 253);
+    font-family: Shrikhand;
+}
+
+footer ul li
+{
+    list-style: none;
+    padding-left: 23em;
+    color: rgb(255,165,0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

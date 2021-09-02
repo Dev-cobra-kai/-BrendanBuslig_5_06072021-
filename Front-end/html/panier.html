@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap"
+    rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/2aa7d080bb.js" crossorigin="anonymous"></script>
+
+  <title>Orinoco</title>
+
+</head>
+
+<!-- Corps de page -->
+
+<body>
+  <!-- logo + Présentation + Panier -->
+  <div class="container-fluid">
+    <header class="row">
+      <!-- logo -->
+      <div class="col-md-5 logo">
+        <a href="../index.html">
+          <img src="../images/logo.png" alt="logo orinoco" />
+        </a>
+      </div>
+      <!-- Titre -->
+      <div class="col-md-6 titre">
+        <h1>Orinoco</h1>
+      </div>
+      <!-- Images Panier + Lien -->
+      <div class="col-md-1 panier">
+        <a href="panier.html">
+          <img src="../images/panier.png" alt="panier orinoco" />
+        </a>
+      </div>
+    </header>
+    <!-- Le Panier -->
+    <main class="row text-center le-panier">
+      <section class="col">
+        <h2>Votre Panier</h2>
+        <div class="d-flex flex-row justify-content-around">
+          <h3 class="col-md-2">Article</h3>
+          <h3 class="col-md-2">Quantité</h3>
+          <h3 class="col-md-2">Prix</h3>
+        </div>
+        <!-- Prix Total et vider le panier -->
+        <div class="d-flex flex-column align-items-center vider-panier ">
+          <button type="button" class="btn btn-primary btn-l">Vider le Panier <i class="fas fa-trash-alt"></i></button>
+        </div>
+      </section>
+    </main>
+    <!-- Le Formulaire -->
+    <section class="row d-flex">
+      <form class="col le-formulaire">
+        <h3>Veuillez renseigner vos coordonnées</h3>
+        <div class="form-row formulaire">
+          <!-- Nom -->
+          <div class="form-group">
+            <label for="lastName">Nom</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Exemple : Dubois">
+          </div>
+          <!-- Prénom -->
+          <div class="form-group">
+            <label for="firstName">Prénom</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Exemple : Bob">
+          </div>
+          <!-- Adresse -->
+          <div class="form-group">
+            <label for="address">Adresse</label>
+            <input type="text" class="form-control" id="address" placeholder="Exemple : Avenue du Nougat">
+          </div>
+          <!-- Ville -->
+          <div class="form-group">
+            <label for="city">Ville</label>
+            <input type="text" class="form-control" id="city" placeholder="Exemple : Gap">
+          </div>
+          <!-- E-mail -->
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Exemple : bob.dubois@sfr.fr">
+          </div>
+          <!-- Bouton Commander -->
+          <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-commander">Commander</button>
+        </div>
+        </div>
+      </form>
+    </section>
+  </div>
+  <!-- Pied de page -->
+  <footer class="row">
+    <div class="col-12 col-md-6">
+      <h3 class="text-center">À propos</h3>
+      <ul>
+        <li>Fonctionnement du site</li>
+        <li>Conditions générales de vente</li>
+        <li>Données et confidentialité</li>
+      </ul>
+    </div>
+    <div class="col-12 col-md-6">
+      <h3 class="text-center">Assistance</h3>
+      <ul>
+        <li>Centre d'aide</li>
+        <li>Nous contacter</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/panier.js"></script>
+
+</body>
+
+</html>
