@@ -30,7 +30,7 @@ header .panier img
 
 /* CORPS DE PAGE */
 
-/* Panier */
+/* Titre des pages */
 
 .row .col h2
 {
@@ -48,9 +48,68 @@ header .panier img
 
 main
 {
-    background-color: #f3e9f1;
     margin-top: 3em;
 }
+
+/* Page d'Accueil */
+
+.main
+{
+    display: flex;
+    justify-content: space-around;
+    padding: 2em;
+}
+
+.produits 
+{
+    text-align: center;
+    background: #f3e9f1;
+    border-radius: 50px 50px 50px 50px;
+    height: 500px;
+    width: 20em;
+    box-shadow: 3px 3px 3px #0000002e;
+    transform: scale(1);
+}
+
+.produits:hover
+{
+    transform: scale(1.05);       
+}
+
+.teddies-lien
+{
+    color: rgb(255,165,0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.produits a
+{
+    color: rgb(255,165,0);
+    transform: scale(1);
+    text-decoration: none;
+}
+
+.teddies-img
+{    
+    width: 20em;
+    height: 20em;
+    border-radius: 45px 45px 0px 0px;
+    object-fit: cover;
+}
+
+.teddies-name
+{
+    color: rgb(182, 83, 253);
+    font-family: Shrikhand;
+}
+
+.teddies-prix
+{
+    font-weight: bold;
+    color: black;
+}
+
+/* Panier */
 
 .le-panier .col h2
 {
@@ -120,11 +179,4 @@ footer h3
 {
     color: rgb(182, 83, 253);
     font-family: Shrikhand;
-}
-
-footer ul li
-{
-    list-style: none;
-    color: rgb(255,165,0);
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

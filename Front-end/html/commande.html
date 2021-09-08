@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Shrikhand&display=swap"
     rel="stylesheet">
 
@@ -22,43 +22,34 @@
 <body>
   <!-- logo + Présentation + Panier -->
   <div class="container-fluid">
-    <header class="row d-flex flex-row justify-content-around">
+    <header class="row">
       <!-- logo -->
-      <div class="col-md-5 col-sm-5 logo">
-        <a href="index.html">
-          <img src="images/logo.png" alt="logo orinoco" />
+      <div class="col-md-5 logo">
+        <a href="../index.html">
+          <img src="../images/logo.png" alt="logo orinoco" />
         </a>
       </div>
       <!-- Titre -->
-      <div class="col-md-6 col-sm-6 titre">
+      <div class="col-md-6 titre">
         <h1>Orinoco</h1>
       </div>
-      <!-- Panier -->
-      <div class="col-md-1 col-sm-1 panier">
-        <a href="html/panier.html">
-          <img src="images/panier.png" alt="panier orinoco" />
+      <!-- Images Panier + Lien -->
+      <div class="col-md-1 panier">
+        <a href="panier.html">
+          <img src="../images/panier.png" alt="panier orinoco" />
         </a>
       </div>
     </header>
-    <!-- Présentation -->
-    <section class="row">
-      <div class="col text-center">
-        <h2>Choisissez le Nounours <br>
-          A votre personnalité
-        </h2>
-      </div>
-    </section>
-    <!-- Les Produits -->
+    <!-- Validation de la Commande -->
     <main class="main" id="main">
       <template id="template"></template>
       <div class="produits">
-        <a id="teddies-lien" class="teddies-lien" href="html/produit.html?id="></a>
-        <div id="teddies-img"></div>
-        <div id="teddies-name-description-prix">
-          <div id="teddies-name" class="teddies-name"></div>
-          <div id="teddies-descritpion" class="teddies-descritpion"></div>
-          <div id="teddies-prix" class="teddies-prix"></div>
-        </div>
+        <a href="produit.html?id="></a>
+        <div id="teddies-img" class="teddies-img"></div>
+        <div id="teddies-name" class="teddies-name"></div>
+        <div id="teddies-descritpion" class="teddies-descritpion"></div>
+        <div id="teddies-colors" class="teddies-colors"></div>
+        <div id="teddies-prix" class="teddies-prix"></div>
       </div>
       </template>
     </main>
@@ -76,7 +67,7 @@
     </div>
   </footer>
 
-  <script src="js/index.js"></script>
+  <script src="js/commande.js"></script>
 
 </body>
 
