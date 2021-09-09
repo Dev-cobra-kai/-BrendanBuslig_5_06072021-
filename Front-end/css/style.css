@@ -48,12 +48,12 @@ header .panier img
 
 main
 {
-    margin-top: 3em;
+    margin-top: 1.2em;
 }
 
 /* Page d'Accueil */
 
-.main
+main
 {
     display: flex;
     justify-content: space-around;
@@ -67,7 +67,7 @@ main
     border-radius: 50px 50px 50px 50px;
     height: 500px;
     width: 20em;
-    box-shadow: 3px 3px 3px #0000002e;
+    box-shadow: 1px 1px 7px 1px;
     transform: scale(1);
 }
 
@@ -105,15 +105,24 @@ main
 
 .teddies-prix
 {
-    font-weight: bold;
+    background-color: white ;
+    justify-content: center;
+    border: solid black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3em;
     color: black;
 }
 
 /* Panier */
 
+.le-panier 
+{
+    background-color: #f3e9f1;
+}
+
 .le-panier .col h2
 {
-    margin: 0.5em;
+    margin: 0.3em;
 }
 
 .le-panier .col .vider-panier
@@ -163,6 +172,26 @@ main
 {
     transform: scale(1.05);       
     cursor: pointer;
+}
+
+/* Validation Commande */
+
+.commande
+{
+    margin-top: 2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-color: #f3e9f1;
+    color: rgb(255,165,0);
+    font-size: 1.5em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.commande h3
+{
+    font-size: 1.5em;
+    color: rgb(182, 83, 253);
+    font-family: Shrikhand;
 }
 
 /* PIED DE PAGE */

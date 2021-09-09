@@ -1,31 +1,23 @@
-(async function() {
-    const articleId = getArticleId()
-    console.log(articleId);
-    const article = await getArticle(articleId)
-    console.log(article);
-    hydrateArticle(article)
-})()
 
-function getArticleId() {
-    return new URL(location.href).searchParams.get("id")
-}
-
-function getArticle(articleId) {
-    return fetch(`http://localhost:3000/api/teddies/${articleId}`)
+fetch("http://localhost:3000/api/teddies/${produit._id}")
     .then(function (response) {
-        return response.json()
+        return response.json();
+    }).then(function (produits) {
+        for (let produit of produits) {
+            document.getElementById("main").innerHTML += `
+                <div class="produit">
+                    <img id="teddy-img" class="teddy-img" src="${produit.imageUrl}" alt="Teddy">                    
+                    <div id="teddy-name-description-prix" class="teddy-name-description-prix">
+                        <h2 id="teddy-name" class="teddy-name">${produit.name}</h2>
+                        <p id="teddy-descritpion" class="teddy-descritpion">${produit.description}</p> 
+                        <p id="teddy-couleurs" class="teddy-couleurs">${produit.colors}</p>                   
+                        <p id="teddy-prix" class="teddy-prix">${produit.price * 0.01} €</p>                                                
+                    </div>
+                </div>`
+                
+        }
+    }).catch(function (error) {
+        console.log("Erreur : " + error);
     })
-    .then(function (articles) {
-        return articles
-    })
-    .catch(function (error) {
-        alert(error);
-    })
-}
 
-function hydrateArticle(article) {
-    cloneElement.getElementById("blog__title").textContent = article.name
-    cloneElement.getElementById("blog__body").textContent = article.price
-    cloneElement.getElementById("blog__body1").textContent = article.description
-    cloneElement.getElementById("blog__body2").textContent = article.colors
-}
+    
