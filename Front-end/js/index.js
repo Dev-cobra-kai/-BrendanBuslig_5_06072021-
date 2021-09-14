@@ -4,6 +4,12 @@ fetch("http://localhost:3000/api/teddies")
     .then(function (response) {
         return response.json();
     }).then(function (produits) {
+        displayProduits(produits)
+    }).catch(function (error) {
+        console.log("Erreur : " + error);
+    })
+
+    function displayProduits(produits) {
         for (let produit of produits) {
             document.getElementById("main").innerHTML += `
                 <div class="produits">
@@ -16,6 +22,4 @@ fetch("http://localhost:3000/api/teddies")
                     </div>
                 </div>`
         }
-    }).catch(function (error) {
-        console.log("Erreur : " + error);
-    })
+    }

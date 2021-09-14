@@ -105,12 +105,87 @@ main
 
 .teddies-prix
 {
-    background-color: white ;
-    justify-content: center;
-    border: solid black;
+    justify-content: center;   
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1.3em;
+    border: solid black;
     color: black;
+    width: 6em;  
+    margin-left: 5em;
+    background-color: white ;
+}
+
+/* Page Produit */
+
+.teddy-img
+{    
+    width: 55em;
+    height: 23em;
+    border-radius: 45px 45px 0px 0px;
+    object-fit: cover;
+}
+
+.produit
+{
+    text-align: center;
+    background: #f3e9f1;
+    border-radius: 50px 50px 50px 50px;
+    height: 645px;
+    width: 55em;
+    box-shadow: 1px 1px 7px 1px;
+}
+
+.teddy-name
+{
+    color: rgb(182, 83, 253);
+    font-family: Shrikhand;
+    margin-top: 0.5em;
+}
+
+.teddy-descritpion
+{
+    color: rgb(255,165,0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1em;
+}
+
+.teddy-couleurs-quantité
+{
+    display: flex;
+    margin-left: 3em;    
+}
+
+.teddy-couleurs
+{
+    padding-right: 19em;
+}
+
+.teddy-prix
+{
+    justify-content: center;   
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.3em;
+    border: solid black;
+    color: black;
+    width: 7em;  
+    margin-left: 17.5em;
+    background-color: white ;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.btn-panier
+{
+    border-radius: 50px;    
+    font-size: 1.2em;
+    padding: 0.5em 6em 0.5em 6em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transform: scale(1);
+} 
+.btn-panier:hover 
+{
+    transform: scale(1.05);       
+    cursor: pointer;
 }
 
 /* Panier */

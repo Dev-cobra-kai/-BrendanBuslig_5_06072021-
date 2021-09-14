@@ -1,3 +1,9 @@
+//******************* Le Panier *********************
+
+
+
+//******************* Le Formulaire *********************
+
 let form = document.querySelector("#loginForm");
 
 // Ecouter la modification du Nom
