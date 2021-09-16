@@ -1,10 +1,6 @@
-//******************* Le Panier *********************
-
-
-
 //******************* Le Formulaire *********************
 
-let form = document.querySelector("#loginForm");
+let form = document.querySelector("#leFormulaire");
 
 // Ecouter la modification du Nom
 form.lastName.addEventListener("change", function () {
@@ -53,12 +49,12 @@ const validLastName = function (inputLastName) {
 
     // On teste l'expression régulière
     if (lastNameRegExp.test(inputLastName.value)) {
-        small.innerHTML = "Nom Valide";
+        small.innerHTML = "Nom : Valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
         return true;
     } else {
-        small.innerHTML = "Nom Non Valide";
+        small.innerHTML = "Nom : Non Valide";
         small.classList.remove("text-success");
         small.classList.add("text-danger");
         return false;
@@ -79,12 +75,12 @@ const validFirstName = function (inputFirstName) {
 
     // On teste l'expression régulière
     if (firstNameRegExp.test(inputFirstName.value)) {
-        small.innerHTML = "Prénom Valide";
+        small.innerHTML = "Prénom : Valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
         return true;
     } else {
-        small.innerHTML = "Prénom Non Valide";
+        small.innerHTML = "Prénom : Non Valide";
         small.classList.remove("text-success");
         small.classList.add("text-danger");
         return false;
@@ -104,12 +100,12 @@ const validAddress = function (inputAddress) {
 
     // On teste l'expression régulière
     if (addressRegExp.test(inputAddress.value)) {
-        small.innerHTML = "Adresse Valide";
+        small.innerHTML = "Adresse : Valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
         return true;
     } else {
-        small.innerHTML = "Adresse Non Valide";
+        small.innerHTML = "Adresse : Non Valide";
         small.classList.remove("text-success");
         small.classList.add("text-danger");
         return false;
@@ -130,12 +126,12 @@ const validCity = function (inputCity) {
 
     // On teste l'expression régulière
     if (cityRegExp.test(inputCity.value)) {
-        small.innerHTML = "Ville Valide";
+        small.innerHTML = "Ville : Valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
         return true;
     } else {
-        small.innerHTML = "Ville Non Valide";
+        small.innerHTML = "Ville : Non Valide";
         small.classList.remove("text-success");
         small.classList.add("text-danger");
         return false;
@@ -156,12 +152,12 @@ const validEmail = function (inputEmail) {
 
     // On teste l'expression régulière
     if (emailRegExp.test(inputEmail.value)) {
-        small.innerHTML = "Adresse Valide";
+        small.innerHTML = "E-mail : Valide";
         small.classList.remove("text-danger");
         small.classList.add("text-success");
         return true;
     } else {
-        small.innerHTML = "Adresse Non Valide";
+        small.innerHTML = "E-mail : Non Valide";
         small.classList.remove("text-success");
         small.classList.add("text-danger");
         return false;
