@@ -37,14 +37,14 @@ function displayProduit(produit) {
                                 </div>
                             </div>
                             <p id="teddy-prix" class="teddy-prix">${produit.price * 0.01} €</p> 
-                            <button type="submit" class="btn btn-primary btn-panier" id=" btn btn-panier">Ajouter au panier</button>
+                            <input type="submit" class="btn btn-primary btn-panier" id=" btn btn-panier" value="Ajouter au panier">
                         </div>                                      
                     </div>
                 </div>`
 
 }
 
-// Affichage choix couleurs
+// Affichage du choix des couleurs
 function displayColors(produit) {
 
     let selectColor = ""
@@ -58,60 +58,37 @@ function displayColors(produit) {
 
 // Récupération des données sélectionnées par l'utilisateur = quantité + couleur
 
+const btn_panier = document.getElementById("btn-panier")
 
+function envoyerPanier(produit) {
+
+    btn_panier.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        let monPanier = JSON.parse(localStorage.getItem("monPanier"));
+        let selectColor = document.getElementById("teddy-couleur").value;
+        let selectQuantite = Number(document.getElementById("teddy-quantite").value);
+
+        let objet = {
+            id: produit._id,
+            nom: produit.name,
+            prix: produit.price,
+            couleur: selectColor,
+            quantite: selectQuantite,
+        };
+
+        let panier = JSON.parse("[]")
+        monPanier.push(objet)      
+        const onlinePanier = JSON.stringify(panier)
+        localStorage.setItem("monPanier", onlinePanier)
+
+        alert("Article ajouté au panier !!!")
+    })    
+}
+
+console.log(localStorage.getItem("monPanier"))
 
 /******************* Local Storage *********************/
 
 // JSON.parse => convertit les données JSON en objet Javascript
 // JSON.stringify => convertit en JSON
-
-
-/*
-
-document.getElementById('btn-panier').addEventListener("click", function (e) {
-    e.preventDefault();
-    let couleurId = document.getElementById("teddy-couleur")
-    const article = {
-        id: produit._id,
-        name: produit.name,
-        price: produit.price * 0.01,
-    } 
-
-
-let panier = JSON.parse(localStorage.getItem("panier")) ?? [];
-panier.push(article);
-localStorage.setItem("panier", JSON.stringify(panier));
-alert("Article ajouté au panier !!!")
-
-})
-*/
-
-  
-
-function envoyerPanier(produit) {
-
-    document.getElementById('btn-panier').addEventListener("click", function (e) {
-        e.preventDefault();
-
-        let objet = ["${produit.name}.value", "${produit.price}.value"]
-
-        let panier = JSON.parse(localStorage.getItem("monPanier"));
-
-        if (!panier || !panier.length) {
-            panier = [];
-        }
-
-        panier.push(objet)
-
-        const onlinePanier = JSON.stringify(panier)
-
-        localStorage.setItem("panier", onlinePanier)
-
-        localStorage.setItem("monPanier", JSON.stringify(panier));
-
-    })
-}
-
-
-
-
