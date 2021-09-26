@@ -142,22 +142,23 @@ main
     margin-top: 0.5em;
 }
 
-.teddy-descritpion
+.teddy-description
 {
     color: rgb(255,165,0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1em;
+    margin-bottom: 1em;
 }
 
-.teddy-couleurs-quantité
+.teddy-couleurs-quantite
 {
     display: flex;
-    margin-left: 3em;    
+    margin-left: 3em;
 }
 
 .teddy-couleurs
 {
-    padding-right: 19em;
+    padding-right: 19em;  
 }
 
 .teddy-prix
