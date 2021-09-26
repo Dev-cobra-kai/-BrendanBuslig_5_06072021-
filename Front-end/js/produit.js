@@ -18,7 +18,6 @@ fetch(`http://localhost:3000/api/teddies/${produitId}`)
     })
 
 // Affichage du Teddy
-
 function displayProduit(produit) {
 
     document.getElementById("teddy-img").src = produit.imageUrl
@@ -43,67 +42,72 @@ function displayProduit(produit) {
     //     choiceQuantity.innerText = produit.quantities[i];
     //     selectQuantity.appendChild(choiceQuantity);
     // }
-
 }
 
 /************************************ LE PANIER ************************************/
-
-// Récupération des données sélectionnées par l'utilisateur = quantité + couleur
 
 const btn_panier = document.getElementById("btn-panier")
 
 btn_panier.addEventListener("click", function (e) {
     e.preventDefault();
 
-    function envoyerPanier(produit) {
-        let objet = {
-            id: produitId._id,
-            nom: produit.name,
-            couleur: selectColor,
-            quantite: selectQuantite,
-            prix: produit.price,
-        };
-        console.log(envoyerPanier);
-    };
-    alert("Article ajouté au panier !!!")
-    
+    let objet = {
+        id: produitId,
+        nom: document.getElementById("teddy-name").value,
+        couleur: document.getElementById("selection-couleur").value,
+        quantite: parseInt(document.getElementById("selection-quantite").value),
+        prix: document.getElementById("teddy-prix").value,
+    }
+
+    /************************************* LOCAL STORAGE *********************************/
+
+    // JSON.parse => convertit les données JSON en objet Javascript
+    // JSON.stringify => convertit en JSON
+
+    let monPanier = JSON.parse(localStorage.getItem("panier"));
+
+    // alert("Article ajouté au panier !!!")
+
+//     const popupConfirmation = function () {
+//         if (window.confirm(`${produitId} a bien été ajouté au panier
+// Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
+//             window.location.href = "panier.html"
+//         } else {
+//             window.location.href = "../index.html"
+//         }
+//     }
+
+    if (monPanier) {
+        monPanier.push(objet)
+        const onlinePanier = JSON.stringify(monPanier)
+        localStorage.setItem("monPanier", onlinePanier)
+        console.log(objet);
+        // popupConfirmation();
+
+    } else {
+        monPanier = [];
+        monPanier.push(objet)
+        const onlinePanier = JSON.stringify(monPanier)
+        localStorage.setItem("monPanier", onlinePanier)
+        console.log(objet);
+        // popupConfirmation();
+    }
+
 })
 
 /*
+let idTeddy = produitId
+let nameTeddy = document.getElementById("teddy-name").value;
+let selectColor = document.getElementById("selection-couleur").value;
+let selectQuantite = parseInt(document.getElementById("selection-quantite").value;
+let priceTeddy = document.getElementById("teddy-prix").value;
 
-    function envoyerPanier (produit) {
+let objet = {
+    id: produitId,
+    nom: nameTeddy,
+    couleur: selectColor,
+    quantite: selectQuantite,
+    prix: priceTeddy,
+};
 
-        let idTeddy = produitId
-        let nameTeddy = document.getElementById("teddy-name").value;
-        let selectColor = document.getElementById("selection-couleur").value;
-        let selectQuantite = parseInt(document.getElementById("selection-quantite").value);
-        let priceTeddy = document.getElementById("teddy-prix").value;
-
-        let objet = {
-            id: produitId,
-            nom: nameTeddy,
-            couleur: selectColor,
-            quantite: selectQuantite,
-            prix: priceTeddy,
-        };
-
-    };
-
-    console.log(envoyerPanier);
-*/
-/************************************* LOCAL STORAGE *********************************/
-
-// JSON.parse => convertit les données JSON en objet Javascript
-// JSON.stringify => convertit en JSON
-
-/*
-
-    let monPanier = JSON.parse(localStorage.getItem("monPanier"));
-    monPanier.push(objet)
-    const onlinePanier = JSON.stringify(monPanier)
-    localStorage.setItem("monPanier", onlinePanier)
-
-    alert("Article ajouté au panier !!!")
-
-})
 */
