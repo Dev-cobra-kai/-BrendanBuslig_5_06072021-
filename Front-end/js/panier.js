@@ -1,6 +1,7 @@
 //******************* Le Panier ************************
 
 
+
 //******************* Le Formulaire *********************
 
 let form = document.querySelector("#leFormulaire");

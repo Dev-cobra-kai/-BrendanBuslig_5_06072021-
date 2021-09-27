@@ -21,11 +21,11 @@ fetch(`http://localhost:3000/api/teddies/${produitId}`)
 function displayProduit(produit) {
 
     document.getElementById("teddy-img").src = produit.imageUrl
-    document.getElementById("teddy-name").innerText = produit.name
-    document.getElementById("teddy-description").innerText = produit.description
-    document.getElementById("selection-couleur").innerText = produit.colors
-    // document.getElementById("selection-quantite").innerText = quantity
-    document.getElementById("teddy-prix").innerText = `${produit.price * 0.01} €`
+    document.getElementById("teddy-name").textContent = produit.name
+    document.getElementById("teddy-description").textContent = produit.description
+    document.getElementById("selection-couleur").textContent = produit.colors
+    // document.getElementById("selection-quantite").textContent = quantity
+    document.getElementById("teddy-prix").textContent = `${produit.price * 0.01} €`
 
     // Affichage du choix des couleurs    
     let selectColor = document.getElementById("selection-couleur");
@@ -53,10 +53,10 @@ btn_panier.addEventListener("click", function (e) {
 
     let objet = {
         id: produitId,
-        nom: document.getElementById("teddy-name").value,
+        nom: document.getElementById("teddy-name").textContent,
         couleur: document.getElementById("selection-couleur").value,
         quantite: parseInt(document.getElementById("selection-quantite").value),
-        prix: document.getElementById("teddy-prix").value,
+        prix: document.getElementById("teddy-prix").textContent,
     }
 
     /************************************* LOCAL STORAGE *********************************/
