@@ -1,8 +1,17 @@
-//******************* Le Panier ************************
+//*********************** LE PANIER *****************************
+
+// Récupération des données du panier
+let monPanier = JSON.parse(localStorage.getItem("panier"));
+
+console.log(monPanier);
+
+// Affichage des produits du panier
+const article = document.getElementById("article");
+console.log(article);
 
 
 
-//******************* Le Formulaire *********************
+//*********************** LE FORMULAIRE ************************
 
 let form = document.querySelector("#leFormulaire");
 

@@ -66,29 +66,33 @@ btn_panier.addEventListener("click", function (e) {
 
     let monPanier = JSON.parse(localStorage.getItem("panier"));
 
+    console.log(monPanier);
+
     // alert("Article ajouté au panier !!!")
 
-//     const popupConfirmation = function () {
-//         if (window.confirm(`${produitId} a bien été ajouté au panier
-// Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
-//             window.location.href = "panier.html"
-//         } else {
-//             window.location.href = "../index.html"
-//         }
-//     }
+    //     const popupConfirmation = function () {
+    //         if (window.confirm(`${produitId} a bien été ajouté au panier
+    // Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
+    //             window.location.href = "panier.html"
+    //         } else {
+    //             window.location.href = "../index.html"
+    //         }
+    //     }
 
     if (monPanier) {
         monPanier.push(objet)
         const onlinePanier = JSON.stringify(monPanier)
-        localStorage.setItem("monPanier", onlinePanier)
-        console.log(objet);
+        localStorage.setItem("panier", onlinePanier)
+        // alert("article récupéré")
         // popupConfirmation();
 
     } else {
         monPanier = [];
-        monPanier.push(objet)
+        monPanier.push(objet);
         const onlinePanier = JSON.stringify(monPanier)
-        localStorage.setItem("monPanier", onlinePanier)
+        localStorage.setItem("panier", onlinePanier)
+        // alert("article non récupéré")
+        console.log(monPanier);
         console.log(objet);
         // popupConfirmation();
     }
