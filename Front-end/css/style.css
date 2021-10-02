@@ -203,7 +203,14 @@ main
 
 .le-panier .col .vider-panier
 {
-    margin: 2em;
+    margin: 2em; 
+}
+
+.votre-panier
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
 }
 
 /* Formulaire */

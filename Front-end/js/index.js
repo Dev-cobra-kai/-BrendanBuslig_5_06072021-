@@ -24,5 +24,4 @@ fetch("http://localhost:3000/api/teddies")
         }
     }
 
-    let arr = [1,2,3];
-    localStorage.setItem("key", JSON.stringify(arr));
+   

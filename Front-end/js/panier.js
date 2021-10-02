@@ -6,9 +6,80 @@ let monPanier = JSON.parse(localStorage.getItem("panier"));
 console.log(monPanier);
 
 // Affichage des produits du panier
-const article = document.getElementById("article");
-console.log(article);
+const produitPanier = document.getElementById("votre-panier");
 
+// Panier vide
+if (monPanier === null || monPanier == 0) {
+    const panierVide = `
+    <div class="panier-vide">
+    <div>Votre panier est vide</div>
+    </div>`;
+    produitPanier.innerHTML = panierVide;
+    // Panier plein
+} else {
+    let panierPlein = [];
+
+    for (j = 0; j < monPanier.length; j++) {
+        panierPlein += `
+        <div class="votre-panier">
+        <div>Nom : ${monPanier[j].nom} Couleur : ${monPanier[j].couleur} 
+        Prix : ${monPanier[j].prix} <button class="btn-supprimer"> Supprimer </button> </div>
+        </div>`;
+    }
+    if (j == monPanier.length) {
+        produitPanier.innerHTML = panierPlein;
+    }
+}
+
+// Supprimer un article du panier
+function supprimerArticle() {
+
+    let btn_supprimer = document.querySelectorAll(".btn-supprimer");
+
+    for (let k = 0; k < btn_supprimer.length; k++) {
+        btn_supprimer[k].addEventListener("click", function (e) {
+            e.preventDefault();
+
+            let idSupprimerTeddy = monPanier[k].id;
+            console.log(idSupprimerTeddy);
+
+            let colorSupprimerTeddy = monPanier[k].couleur;
+            console.log(colorSupprimerTeddy);
+
+            monPanier = monPanier.filter((element) => element.id !== idSupprimerTeddy || element.couleur !== colorSupprimerTeddy);
+            console.log(monPanier);
+
+            const onlinePanier = JSON.stringify(monPanier)
+            localStorage.setItem("panier", onlinePanier)
+
+            // alert("Article supprimer du panier");
+            window.location.reload()
+        })
+    }
+}
+supprimerArticle();
+
+// Vider entièrement le panier
+function viderPanier() {
+
+    const btn_vider_panier = document.getElementById("btn-vider")
+    btn_vider_panier.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        localStorage.clear();
+        window.location.reload();
+    });
+}
+viderPanier()
+
+// Montant Total du panier
+let totalPanier = [];
+
+for (let l = 0; l < monPanier.length; l++) {
+    let montantTotal = monPanier[l].prix;
+
+    totalPanier.push(montantTotal)
+}
 
 
 //*********************** LE FORMULAIRE ************************

@@ -83,7 +83,7 @@ btn_panier.addEventListener("click", function (e) {
         monPanier.push(objet)
         const onlinePanier = JSON.stringify(monPanier)
         localStorage.setItem("panier", onlinePanier)
-        // alert("article récupéré")
+        // alert("Article récupéré")
         // popupConfirmation();
 
     } else {
@@ -91,7 +91,7 @@ btn_panier.addEventListener("click", function (e) {
         monPanier.push(objet);
         const onlinePanier = JSON.stringify(monPanier)
         localStorage.setItem("panier", onlinePanier)
-        // alert("article non récupéré")
+        // alert("Article non récupéré")
         console.log(monPanier);
         console.log(objet);
         // popupConfirmation();
@@ -99,19 +99,3 @@ btn_panier.addEventListener("click", function (e) {
 
 })
 
-/*
-let idTeddy = produitId
-let nameTeddy = document.getElementById("teddy-name").value;
-let selectColor = document.getElementById("selection-couleur").value;
-let selectQuantite = parseInt(document.getElementById("selection-quantite").value;
-let priceTeddy = document.getElementById("teddy-prix").value;
-
-let objet = {
-    id: produitId,
-    nom: nameTeddy,
-    couleur: selectColor,
-    quantite: selectQuantite,
-    prix: priceTeddy,
-};
-
-*/
