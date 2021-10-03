@@ -75,11 +75,22 @@ viderPanier()
 // Montant Total du panier
 let totalPanier = [];
 
-for (let l = 0; l < monPanier.length; l++) {
-    let montantTotal = monPanier[l].prix;
+// for (let l = 0; l < monPanier.length; l++) {
+//     let montantTotal = monPanier[l].prix;
 
-    totalPanier.push(montantTotal)
-}
+//     totalPanier.push(montantTotal)
+//     console.log(totalPanier);
+// }
+
+const reducer = (previousValue, currentValue) => previousValue + currentValue;
+totalPanier = totalPanier.reduce(reducer,0);
+console.log(totalPanier);
+
+
+
+// let displayPrixTotal = '<div class="prix-total">Le prix total est de : ${prixTotal} € </div>'
+
+// displayPrixTotal = document.getElementById("votre-panier");
 
 
 //*********************** LE FORMULAIRE ************************
@@ -248,4 +259,51 @@ const validEmail = function (inputEmail) {
     }
 };
 
+// Mettre le formulaire dans le local storage
+const btn_commander = document.getElementById("btn-commander");
+
+btn_commander.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const formulaire = {
+        nom: document.getElementById("lastName").value,
+        prenom:  document.getElementById("firstName").value,
+        adresse: document.getElementById("address").value,
+        ville:document.getElementById("city").value,
+        email: document.getElementById("email").value,
+    }
+
+    const onlineFormulaire = JSON.stringify(formulaire)
+    localStorage.setItem("formulaire", onlineFormulaire);
+
+    const envoyerProduitFormulaire = {
+        monPanier, formulaire
+    };
+
+    console.log(envoyerProduitFormulaire);
+
+
+    // Envoyer le résultat au back-end
+    const objetServeur = fetch("http://localhost:3000/api/teddies/users", {
+        method: "POST",
+        body: JSON.stringify(envoyerProduitFormulaire),
+        headers: {
+            "Content-Type" : "application/json",
+        },
+    });
+
+    // objetServeur.then(async, function(response) {
+    //     try{
+    //         console.log(response);
+
+    //         const contenu = await response.json();
+    //         console.log(contenu);
+
+    //     }catch(e) {
+    //         console.log(e);
+    //     }
+    // })
+
+
+})
 

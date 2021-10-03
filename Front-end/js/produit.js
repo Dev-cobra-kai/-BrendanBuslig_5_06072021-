@@ -23,8 +23,7 @@ function displayProduit(produit) {
     document.getElementById("teddy-img").src = produit.imageUrl
     document.getElementById("teddy-name").textContent = produit.name
     document.getElementById("teddy-description").textContent = produit.description
-    document.getElementById("selection-couleur").textContent = produit.colors
-    // document.getElementById("selection-quantite").textContent = quantity
+    document.getElementById("selection-couleur").textContent = produit.colors    
     document.getElementById("teddy-prix").textContent = `${produit.price * 0.01} €`
 
     // Affichage du choix des couleurs    
@@ -36,11 +35,12 @@ function displayProduit(produit) {
     }
 
     // Affichage de la quantité
-    // const selectQuantity = document.getElementById("selection-quantite");
-    // for (let i = 0; i < produit.quantities.length; i++) {
+    // const quantity = document.getElementById("selection-quantite");
+    // console.log(quantity);
+    // for (let j = 0; j < quantity.length; j++) {
     //     let choiceQuantity = document.createElement("option");
-    //     choiceQuantity.innerText = produit.quantities[i];
-    //     selectQuantity.appendChild(choiceQuantity);
+    //     choiceQuantity.innerText = produit.quantity[j];
+    //     quantity.appendChild(choiceQuantity);
     // }
 }
 
@@ -68,7 +68,7 @@ btn_panier.addEventListener("click", function (e) {
 
     console.log(monPanier);
 
-    // alert("Article ajouté au panier !!!")
+    alert("Article ajouté au panier !!!")
 
     //     const popupConfirmation = function () {
     //         if (window.confirm(`${produitId} a bien été ajouté au panier
