@@ -42,23 +42,36 @@
     </header>
     <!-- Le Panier -->
     <main class="row text-center le-panier" id="le-panier">
-      <section class="col">
+      <section class="col section-panier">
         <h2>Votre Panier</h2>
         <div class="d-flex votre-panier" id="votre-panier">
-          <h3 class="col-md-2">Nom</h3>
-          <div id="nom"></div>
-          <h3 class="col-md-2">Couleur</h3>
-          <div id="couleur"></div>
-          <h3 class="col-md-2">Quantité</h3>
-          <div id="quantite"></div>
-          <h3 class="col-md-2">Prix</h3>
-          <div id="prix"></div>
-          <h3 class="col-md-2">Prix Total</h3>
-          <div id="prix-total"></div>
-        </div>
-        <!-- Prix Total et vider le panier -->
-        <div class="d-flex flex-column align-items-center vider-panier ">
-          <button type="button" id="btn-vider" class="btn btn-primary btn-vider">Vider le Panier <i class="fas fa-trash-alt"></i></button>
+          <table>
+            <thead id="panier-head">
+              <tr>
+                <th id="nom">Nom</th>
+                <th id="couleur">Couleur</th>
+                <th id="quantite">Quantité</th>
+                <th id="prix">Prix</th>
+              </tr>
+            <tbody id="panier-body">
+              <!-- <tr>
+                <td id="nom">Nom</td>
+                <td id="couleur">Couleur</td>
+                <td id="quantite">Quantité</td>
+                <td id="prix">Prix</td>
+                <td id="prix">Prix + Quantité</td>
+                <td><button class="btn-supprimer"> Supprimer </button></td>
+              </tr> -->
+            </tbody>
+            <tfoot id="panier-footer">
+              <th class="col-md-2 prix-total">Prix Total</th>
+            </tfoot>
+          </table>
+          <!-- Prix Total et vider le panier -->
+          <div class="d-flex flex-column align-items-center vider-panier ">
+            <button type="button" id="btn-vider" class="btn btn-primary btn-vider">Vider le Panier <i
+                class="fas fa-trash-alt"></i></button>
+          </div>
         </div>
       </section>
     </main>

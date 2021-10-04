@@ -23,7 +23,7 @@ function displayProduit(produit) {
     document.getElementById("teddy-img").src = produit.imageUrl
     document.getElementById("teddy-name").textContent = produit.name
     document.getElementById("teddy-description").textContent = produit.description
-    document.getElementById("selection-couleur").textContent = produit.colors    
+    document.getElementById("selection-couleur").textContent = produit.colors
     document.getElementById("teddy-prix").textContent = `${produit.price * 0.01} €`
 
     // Affichage du choix des couleurs    
@@ -44,6 +44,7 @@ function displayProduit(produit) {
     // }
 }
 
+
 /************************************ LE PANIER ************************************/
 
 const btn_panier = document.getElementById("btn-panier")
@@ -51,12 +52,17 @@ const btn_panier = document.getElementById("btn-panier")
 btn_panier.addEventListener("click", function (e) {
     e.preventDefault();
 
+    const choixQuantite = parseInt(document.getElementById("selection-quantite").value);
+    console.log(choixQuantite);
+
+    const price = document.getElementById("teddy-prix").textContent;
+
     let objet = {
         id: produitId,
         nom: document.getElementById("teddy-name").textContent,
         couleur: document.getElementById("selection-couleur").value,
-        quantite: parseInt(document.getElementById("selection-quantite").value),
-        prix: document.getElementById("teddy-prix").textContent,
+        quantite: choixQuantite,
+        prix: price,
     }
 
     /************************************* LOCAL STORAGE *********************************/
@@ -68,7 +74,7 @@ btn_panier.addEventListener("click", function (e) {
 
     console.log(monPanier);
 
-    alert("Article ajouté au panier !!!")
+    // alert("Article ajouté au panier !!!")
 
     //     const popupConfirmation = function () {
     //         if (window.confirm(`${produitId} a bien été ajouté au panier

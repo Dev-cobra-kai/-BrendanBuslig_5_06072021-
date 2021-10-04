@@ -5,11 +5,13 @@ let monPanier = JSON.parse(localStorage.getItem("panier"));
 
 console.log(monPanier);
 
+let panierPlein = document.getElementById("panier-body");
+
 // Affichage des produits du panier
 const produitPanier = document.getElementById("votre-panier");
 
 // Panier vide
-if (monPanier === null || monPanier == 0) {
+if (monPanier == null || monPanier == 0) {
     const panierVide = `
     <div class="panier-vide">
     <div>Votre panier est vide</div>
@@ -17,17 +19,36 @@ if (monPanier === null || monPanier == 0) {
     produitPanier.innerHTML = panierVide;
     // Panier plein
 } else {
-    let panierPlein = [];
+    // let panierPlein = [];
+
+    // for (j = 0; j < monPanier.length; j++) {
+    //     panierPlein += `
+    //     <div class="votre-panier">
+    //     <div>Nom : ${monPanier[j].nom} Couleur : ${monPanier[j].couleur} 
+    //     Prix : ${monPanier[j].prix} <button class="btn-supprimer"> Supprimer </button> </div>
+    //     </div>`;
+    // }
+    // if (j == monPanier.length) {
+    //     produitPanier.innerHTML = panierPlein;
+    // }
+
 
     for (j = 0; j < monPanier.length; j++) {
-        panierPlein += `
-        <div class="votre-panier">
-        <div>Nom : ${monPanier[j].nom} Couleur : ${monPanier[j].couleur} 
-        Prix : ${monPanier[j].prix} <button class="btn-supprimer"> Supprimer </button> </div>
-        </div>`;
-    }
-    if (j == monPanier.length) {
-        produitPanier.innerHTML = panierPlein;
+        panierPlein.innerHTML +=
+            `<tbody>
+            <tr>
+                <td>${monPanier[j].nom}</td>
+                <td>${monPanier[j].couleur}</td>
+                <td>${monPanier[j].quantite}</td>
+                <td>${(monPanier[j].prix * monPanier[j].quantite)}</td>                
+                <td><button class="btn-supprimer"> Supprimer </button></td>
+            </tr>
+        </tbody>`;
+
+        let ajouterTeddy = [];
+        for (m = 0; m < monPanier[j].quantite; m++) {
+            ajouterTeddy.push(monPanier[j].id);
+        }
     }
 }
 
@@ -75,22 +96,33 @@ viderPanier()
 // Montant Total du panier
 let totalPanier = [];
 
-// for (let l = 0; l < monPanier.length; l++) {
-//     let montantTotal = monPanier[l].prix;
+for (l = 0; l < monPanier.length; l++) {
+    let montantTotal = monPanier[l].prix;
 
-//     totalPanier.push(montantTotal)
-//     console.log(totalPanier);
-// }
+    montantTotal = montantTotal.slice(0, -2)
+    montantTotal = parseInt(montantTotal, 10)
+
+    totalPanier.push(montantTotal)
+    console.log(totalPanier);
+}
 
 const reducer = (previousValue, currentValue) => previousValue + currentValue;
-totalPanier = totalPanier.reduce(reducer,0);
+totalPanier = totalPanier.reduce(reducer, 0);
 console.log(totalPanier);
 
 
+prixTotal = document.getElementById("panier-footer");
+prixTotal.innerHTML =
+    `<tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <th>Prix Total</th>
+            <th>${totalPanier} €</th>
+        </tr
+    </tfoot>`;
 
-// let displayPrixTotal = '<div class="prix-total">Le prix total est de : ${prixTotal} € </div>'
-
-// displayPrixTotal = document.getElementById("votre-panier");
+localStorage.setItem("totalPanier", JSON.stringify(totalPanier));
 
 
 //*********************** LE FORMULAIRE ************************
@@ -267,9 +299,9 @@ btn_commander.addEventListener("click", function (e) {
 
     const formulaire = {
         nom: document.getElementById("lastName").value,
-        prenom:  document.getElementById("firstName").value,
+        prenom: document.getElementById("firstName").value,
         adresse: document.getElementById("address").value,
-        ville:document.getElementById("city").value,
+        ville: document.getElementById("city").value,
         email: document.getElementById("email").value,
     }
 
@@ -288,18 +320,20 @@ btn_commander.addEventListener("click", function (e) {
         method: "POST",
         body: JSON.stringify(envoyerProduitFormulaire),
         headers: {
-            "Content-Type" : "application/json",
+            "Content-Type": "application/json",
         },
     });
 
-    // objetServeur.then(async, function(response) {
-    //     try{
+    console.log(objetServeur);
+
+    // objetServeur.then(async function (response) {
+    //     try {
     //         console.log(response);
 
     //         const contenu = await response.json();
     //         console.log(contenu);
 
-    //     }catch(e) {
+    //     } catch (e) {
     //         console.log(e);
     //     }
     // })
