@@ -32,18 +32,20 @@ if (monPanier == null || monPanier == 0) {
     //     produitPanier.innerHTML = panierPlein;
     // }
 
-
     for (j = 0; j < monPanier.length; j++) {
+        const prix = parseInt(monPanier[j].prix, 10);
+        const quantity = parseInt(monPanier[j].quantite, 10);
         panierPlein.innerHTML +=
             `<tbody>
-            <tr>
-                <td>${monPanier[j].nom}</td>
-                <td>${monPanier[j].couleur}</td>
-                <td>${monPanier[j].quantite}</td>
-                <td>${(monPanier[j].prix * monPanier[j].quantite)}</td>                
-                <td><button class="btn-supprimer"> Supprimer </button></td>
-            </tr>
-        </tbody>`;
+                <tr>
+                    <td>${monPanier[j].nom}</td>
+                    <td>${monPanier[j].couleur}</td>
+                    <td>${monPanier[j].quantite}</td>
+                    <td>${monPanier[j].prix}</td>
+                    <td>${(prix * quantity)} €</td>                
+                    <td><button class="btn-supprimer"> Supprimer </button></td>
+                </tr>
+            </tbody>`;
 
         let ajouterTeddy = [];
         for (m = 0; m < monPanier[j].quantite; m++) {
@@ -97,10 +99,12 @@ viderPanier()
 let totalPanier = [];
 
 for (l = 0; l < monPanier.length; l++) {
-    let montantTotal = monPanier[l].prix;
+    const prix = parseInt(monPanier[l].prix, 10);
+    const quantity = parseInt(monPanier[l].quantite, 10);
+    let prixQuantity = prix * quantity;
+    let montantTotal = prixQuantity;
 
-    montantTotal = montantTotal.slice(0, -2)
-    montantTotal = parseInt(montantTotal, 10)
+    // montantTotal = parseInt(montantTotal, 10)
 
     totalPanier.push(montantTotal)
     console.log(totalPanier);
@@ -117,7 +121,7 @@ prixTotal.innerHTML =
         <tr>
             <td></td>
             <td></td>
-            <th>Prix Total</th>
+            <th>Montant Total</th>
             <th>${totalPanier} €</th>
         </tr
     </tfoot>`;
@@ -308,36 +312,59 @@ btn_commander.addEventListener("click", function (e) {
     const onlineFormulaire = JSON.stringify(formulaire)
     localStorage.setItem("formulaire", onlineFormulaire);
 
-    const envoyerProduitFormulaire = {
-        monPanier, formulaire
+    const panierForm = {
+        monPanier, formulaire,
     };
 
-    console.log(envoyerProduitFormulaire);
-
+    console.log(panierForm);
 
     // Envoyer le résultat au back-end
-    const objetServeur = fetch("http://localhost:3000/api/teddies/users", {
+    const objetServeur = fetch("http://localhost:3000/api/teddies/panierForm", {
         method: "POST",
-        body: JSON.stringify(envoyerProduitFormulaire),
+        body: JSON.stringify(panierForm),
         headers: {
             "Content-Type": "application/json",
-        },
+        }
     });
 
     console.log(objetServeur);
 
-    // objetServeur.then(async function (response) {
-    //     try {
-    //         console.log(response);
+    objetServeur.then(async function (response) {
+        try {
+            const contenu = await response.json();
+            console.log(contenu);
 
-    //         const contenu = await response.json();
-    //         console.log(contenu);
+            if (response.ok) {
+                console.log("Résultat de response.ok : ${response.ok}");
 
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // })
+                console.log("id de response");
+                console.log("contenu._id");
 
+                localStorage.setItem("responseId,contenu._id")
 
-})
+                window.location = "commande.html";
+
+            } else {
+                console.log("Réponse du serveur : ${response.status}");
+                alert("Problème avec le serveur : erreur ${response.status}")
+            };
+
+        } catch (e) {
+            console.log(e);
+        }
+    })
+
+    const objectServer = fetch("http://localhost:3000/api/teddies/panierForm")
+    objectServer.then(async function (response) {
+        try {
+            console.log(objectServer);
+            const contenuServeur = await response.json();
+            console.log(contenuServeur);
+
+        } catch (e) {
+            console.log(e);
+        }
+    })
+
+});
 
