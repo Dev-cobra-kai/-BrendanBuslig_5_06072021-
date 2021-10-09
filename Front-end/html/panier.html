@@ -22,19 +22,19 @@
 <body>
   <!-- logo + Présentation + Panier -->
   <div class="container-fluid">
-    <header class="row">
+    <header class="row d-flex flex-row">
       <!-- logo -->
-      <div class="col-md-5 logo">
+      <div class="col-4 col-md-5 col-sm-5 logo">
         <a href="../index.html">
           <img src="../images/logo.png" alt="logo orinoco" />
         </a>
       </div>
       <!-- Titre -->
-      <div class="col-md-6 titre">
+      <div class="col-6 col-md-6 col-sm-6 titre">
         <h1>Orinoco</h1>
       </div>
       <!-- Images Panier + Lien -->
-      <div class="col-md-1 panier">
+      <div class="col-2 col-md-1 col-sm-1 panier">
         <a href="panier.html">
           <img src="../images/panier.png" alt="panier orinoco" />
         </a>
@@ -69,7 +69,7 @@
             </tfoot>
           </table>
           <!-- Prix Total et vider le panier -->
-          <div class="d-flex flex-column align-items-center vider-panier ">
+          <div class="d-flex flex-column align-items-center vider-panier">
             <button type="button" id="btn-vider" class="btn btn-primary btn-vider">Vider le Panier <i
                 class="fas fa-trash-alt"></i></button>
           </div>
@@ -112,10 +112,8 @@
             <small></small>
           </div>
           <!-- Bouton Commander -->
-          <div class="form-group">
-            <button type="submit" id="btn-commander" class="btn btn-primary btn-commander">Commander</button>
-          </div>
         </div>
+        <button type="submit" id="btn-commander" class="btn btn-primary  btn-commander">Commander</button>
       </form>
     </section>
   </div>

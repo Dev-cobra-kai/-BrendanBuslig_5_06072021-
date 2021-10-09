@@ -33,17 +33,7 @@ function displayProduit(produit) {
         choiceColor.innerText = produit.colors[i];
         selectColor.appendChild(choiceColor);
     }
-
-    // Affichage de la quantité
-    // const quantity = document.getElementById("selection-quantite");
-    // console.log(quantity);
-    // for (let j = 0; j < quantity.length; j++) {
-    //     let choiceQuantity = document.createElement("option");
-    //     choiceQuantity.innerText = produit.quantity[j];
-    //     quantity.appendChild(choiceQuantity);
-    // }
 }
-
 
 /************************************ LE PANIER ************************************/
 
@@ -53,7 +43,6 @@ btn_panier.addEventListener("click", function (e) {
     e.preventDefault();
 
     const choixQuantite = parseInt(document.getElementById("selection-quantite").value);
-    console.log(choixQuantite);
 
     const price = document.getElementById("teddy-prix").textContent;
 
@@ -86,7 +75,14 @@ btn_panier.addEventListener("click", function (e) {
     //     }
 
     if (monPanier) {
-        monPanier.push(objet)
+        monPanier.forEach(function(element) {
+            if(element.id === objet.id && element.couleur === objet.couleur) {
+                element.quantite += objet.quantite
+            }else {
+                monPanier.push(objet)
+            }
+        });
+        
         const onlinePanier = JSON.stringify(monPanier)
         localStorage.setItem("panier", onlinePanier)
         // alert("Article récupéré")

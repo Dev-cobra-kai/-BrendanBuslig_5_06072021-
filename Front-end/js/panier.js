@@ -15,22 +15,15 @@ if (monPanier == null || monPanier == 0) {
     const panierVide = `
     <div class="panier-vide">
     <div>Votre panier est vide</div>
-    </div>`;
+    </div>
+    `;
     produitPanier.innerHTML = panierVide;
+
+    // window.alert("panier vide");
+    // window.location.href = "../index.html";
+
     // Panier plein
 } else {
-    // let panierPlein = [];
-
-    // for (j = 0; j < monPanier.length; j++) {
-    //     panierPlein += `
-    //     <div class="votre-panier">
-    //     <div>Nom : ${monPanier[j].nom} Couleur : ${monPanier[j].couleur} 
-    //     Prix : ${monPanier[j].prix} <button class="btn-supprimer"> Supprimer </button> </div>
-    //     </div>`;
-    // }
-    // if (j == monPanier.length) {
-    //     produitPanier.innerHTML = panierPlein;
-    // }
 
     for (j = 0; j < monPanier.length; j++) {
         const prix = parseInt(monPanier[j].prix, 10);
@@ -301,25 +294,25 @@ const btn_commander = document.getElementById("btn-commander");
 btn_commander.addEventListener("click", function (e) {
     e.preventDefault();
 
-    const formulaire = {
-        nom: document.getElementById("lastName").value,
-        prenom: document.getElementById("firstName").value,
-        adresse: document.getElementById("address").value,
-        ville: document.getElementById("city").value,
+    let contact = {
+        lastName: document.getElementById("lastName").value,
+        firstName: document.getElementById("firstName").value,
+        address: document.getElementById("address").value,
+        city: document.getElementById("city").value,
         email: document.getElementById("email").value,
     }
 
-    const onlineFormulaire = JSON.stringify(formulaire)
-    localStorage.setItem("formulaire", onlineFormulaire);
+    const onlineFormulaire = JSON.stringify(contact)
+    localStorage.setItem("contact", onlineFormulaire);
 
     const panierForm = {
-        monPanier, formulaire,
+        monPanier, contact,
     };
 
     console.log(panierForm);
 
     // Envoyer le résultat au back-end
-    const objetServeur = fetch("http://localhost:3000/api/teddies/panierForm", {
+    const objetServeur = fetch("http://localhost:3000/api/teddies/order", {
         method: "POST",
         body: JSON.stringify(panierForm),
         headers: {
@@ -340,7 +333,7 @@ btn_commander.addEventListener("click", function (e) {
                 console.log("id de response");
                 console.log("contenu._id");
 
-                localStorage.setItem("responseId,contenu._id")
+                localStorage.setItem("responseId,commandeId")
 
                 window.location = "commande.html";
 
@@ -348,18 +341,6 @@ btn_commander.addEventListener("click", function (e) {
                 console.log("Réponse du serveur : ${response.status}");
                 alert("Problème avec le serveur : erreur ${response.status}")
             };
-
-        } catch (e) {
-            console.log(e);
-        }
-    })
-
-    const objectServer = fetch("http://localhost:3000/api/teddies/panierForm")
-    objectServer.then(async function (response) {
-        try {
-            console.log(objectServer);
-            const contenuServeur = await response.json();
-            console.log(contenuServeur);
 
         } catch (e) {
             console.log(e);

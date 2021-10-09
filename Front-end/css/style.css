@@ -3,11 +3,12 @@
 header 
 {
     background-color: #f3e9f1;
+    height: 4em;
 }
 
 header .logo img
 {
-    width: 13em;
+    width: 8em;
 }
 
 header .titre
@@ -19,13 +20,13 @@ header .titre
 
 header .titre h1
 {
-    font-size: 3.5em;
+    font-size: 2.5em;
 }
 
 header .panier img
 {
-    height: 3em;
-    margin: 1.5em;
+    height: 2.5em;
+    margin: 1em;
 }
 
 /* CORPS DE PAGE */
@@ -34,8 +35,8 @@ header .panier img
 
 .row .col h2
 {
-    margin-top: 1em;
-    font-size: 2.5em;
+    margin-top: 0.5em;
+    font-size: 2em;
     color: rgb(255,165,0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -48,7 +49,7 @@ header .panier img
 
 main
 {
-    margin-top: 1.2em;
+    margin-top: 1em;
 }
 
 /* Page d'Accueil */
@@ -57,7 +58,6 @@ main
 {
     display: flex;
     justify-content: space-around;
-    padding: 2em;
 }
 
 .produits 
@@ -65,8 +65,8 @@ main
     text-align: center;
     background: #f3e9f1;
     border-radius: 50px 50px 50px 50px;
-    height: 500px;
-    width: 20em;
+    height: 450px;
+    width: 15em;
     box-shadow: 1px 1px 7px 1px;
     transform: scale(1);
 }
@@ -91,8 +91,8 @@ main
 
 .teddies-img
 {    
-    width: 20em;
-    height: 20em;
+    width: 15em;
+    height: 15em;
     border-radius: 45px 45px 0px 0px;
     object-fit: cover;
 }
@@ -101,6 +101,7 @@ main
 {
     color: rgb(182, 83, 253);
     font-family: Shrikhand;
+    font-size: 1.5em;
 }
 
 .teddies-prix
@@ -110,8 +111,8 @@ main
     font-size: 1.3em;
     border: solid black;
     color: black;
-    width: 6em;  
-    margin-left: 5em;
+    width: 4em;  
+    margin-left: 4em;
     background-color: white ;
 }
 
@@ -119,8 +120,8 @@ main
 
 .teddy-img
 {    
-    width: 55em;
-    height: 23em;
+    width: 50em;
+    height: 18em;
     border-radius: 45px 45px 0px 0px;
     object-fit: cover;
 }
@@ -130,8 +131,8 @@ main
     text-align: center;
     background: #f3e9f1;
     border-radius: 50px 50px 50px 50px;
-    height: 645px;
-    width: 55em;
+    height: 580px;
+    width: 50em;
     box-shadow: 1px 1px 7px 1px;
 }
 
@@ -153,12 +154,12 @@ main
 .teddy-couleurs-quantite
 {
     display: flex;
-    margin-left: 3em;
+    margin-left: 2em;
 }
 
 .teddy-couleurs
 {
-    padding-right: 19em;  
+    padding-right: 15em;  
 }
 
 .teddy-prix
@@ -169,10 +170,9 @@ main
     border: solid black;
     color: black;
     width: 7em;  
-    margin-left: 17.5em;
+    margin-left: 16em;
     background-color: white ;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.7em;
 }
 
 .btn-panier
@@ -213,7 +213,6 @@ main
     padding: 0.5em;
 }
 
-
 /* Formulaire */
 
 .formulaire
@@ -232,8 +231,8 @@ main
 .form-group input
 {
     border-radius: 25px;
-    width: 20em;   
-    padding: 1em;
+    width: 18em;   
+    padding: 0.5em;
 }
 
 .formulaire .form-group 
@@ -246,9 +245,10 @@ main
 
 .btn-commander
 {
+    margin-left: 28em;
     border-radius: 50px;    
     font-size: 1em;
-    padding: 1em 4em 1em 4em;
+    padding: 1em 10em 1em 10em;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transform: scale(1);
 } 
@@ -282,7 +282,7 @@ main
 
 footer
 {
-    margin-top: 2em;
+    margin-top: 1.3em;
     background-color: #f3e9f1;  
     padding-top: 1em;  
     width: 100%; 
@@ -292,4 +292,569 @@ footer h3
 {
     color: rgb(182, 83, 253);
     font-family: Shrikhand;
+}
+
+/* MEDIA QUERIES */
+
+/* Desktop */
+
+/* Ecrans entre 1025 px et 1300 px */
+
+@media screen and (min-width: 1025px) and (max-width: 1300px)
+{
+    /* ENTETE DE PAGE */
+
+    header .panier img
+    {
+        height: 2em;
+        margin: 1em;
+    }
+
+    header .logo img
+    {
+        width: 8em;
+    }
+
+    /* CORPS DE PAGE */
+
+    /* Titre des pages */
+
+    .row .col h2
+    {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .row form h3
+    {
+        color: rgb(255,165,0);
+        padding-top: 0.5em;
+    }
+
+    /* Page d'Accueil */
+
+    main
+    {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+
+    .produits 
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 450px;
+        width: 20em;
+        box-shadow: 1px 1px 7px 1px;
+        transform: scale(1);
+        margin-top: 1.5em;
+    }
+
+    .teddies-img
+    {    
+        width: 20em;
+        height: 15em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .teddies-prix
+    {
+        justify-content: center;   
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.3em;
+        border: solid black;
+        color: black;
+        width: 7em;  
+        margin-left: 4em;
+        background-color: white ;
+    }
+
+    /* Page Produit */
+
+    .teddy-img
+    {    
+        width: 40em;
+        height: 18em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .produit
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 580px;
+        width: 40em;
+        box-shadow: 1px 1px 7px 1px;
+    }
+
+    .teddy-name
+    {
+        color: rgb(182, 83, 253);
+        font-family: Shrikhand;
+    }
+
+    .teddy-description
+    {
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+
+    .teddy-couleurs-quantite
+    {
+        display: flex;
+        margin-left: 0.5em;
+    }
+
+    .teddy-couleurs
+    {
+        padding-right: 8em;  
+    }
+
+    .teddy-prix
+    {
+    margin-left: 12em;
+    margin-bottom: 0.7em;
+    }
+
+    /* Formulaire */
+
+    .formulaire
+    {
+        background-color: #fff;     
+        justify-content: center;
+    }
+
+    .le-formulaire h3
+    {
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    .form-group input
+    {
+        border-radius: 25px;
+        width: 20em;   
+        padding: 1em;
+    }
+
+    .formulaire .form-group 
+    {
+        padding: 1em;
+        font-size: 1.2em;
+    }
+
+    /* Bouton Commander */
+
+    .btn-commander
+    {
+        margin-left: 19em;
+        border-radius: 50px;    
+        font-size: 1em;
+        width: 50%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: scale(1);
+    } 
+    .btn-commander:hover 
+    {
+        transform: scale(1.05);       
+        cursor: pointer;
+    }
+
+}
+
+/* Tablette */
+
+/* Ecrans entre 769 px et 1024 px */
+
+@media screen and (min-width: 769px) and (max-width: 1024px)
+{
+     /* ENTETE DE PAGE */
+
+    header .panier img
+    {
+        height: 1.8em;
+        margin: 0.5em;
+    }
+
+    header .logo img
+    {
+        width: 8em;
+    }
+
+    /* CORPS DE PAGE */
+
+    /* Titre des pages */
+
+    .row .col h2
+    {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .row form h3
+    {
+        color: rgb(255,165,0);
+        padding-top: 0.5em;
+    }
+
+    /* Page d'Accueil */
+
+    main
+    {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .produits 
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 450px;
+        width: 20em;
+        box-shadow: 1px 1px 7px 1px;
+        transform: scale(1);
+        margin-top: 1.5em;
+    }
+
+    .teddies-img
+    {    
+        width: 20em;
+        height: 15em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .teddies-prix
+    {
+        justify-content: center;   
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.3em;
+        border: solid black;
+        color: black;
+        width: 7em;  
+        margin-left: 4em;
+        background-color: white ;
+    }
+
+    /* Page Produit */
+
+    .teddy-img
+    {    
+        width: 40em;
+        height: 18em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .produit
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 580px;
+        width: 40em;
+        box-shadow: 1px 1px 7px 1px;
+    }
+
+    .teddy-name
+    {
+        color: rgb(182, 83, 253);
+        font-family: Shrikhand;
+    }
+
+    .teddy-description
+    {
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1em;
+        margin-bottom: 1em;
+    }
+
+    .teddy-couleurs-quantite
+    {
+        display: flex;
+        margin-left: 0.5em;
+    }
+
+    .teddy-couleurs
+    {
+        padding-right: 8em;  
+    }
+
+    .teddy-prix
+    {
+        margin-left: 13em;
+        margin-bottom: 0.7em;
+        width: 5em;
+    }
+   
+    /* Formulaire */
+
+    .formulaire
+    {
+        background-color: #fff;     
+        justify-content: center;
+    }
+
+    .le-formulaire h3
+    {
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    .form-group input
+    {
+        border-radius: 25px;
+        width: 20em;   
+        padding: 1em;
+    }
+
+    .formulaire .form-group 
+    {
+        padding: 1em;
+        font-size: 1.2em;
+    }
+
+    /* Bouton Commander */
+
+    .btn-commander
+    {
+        margin-left: 12em;
+        border-radius: 50px;    
+        font-size: 1em;
+        width: 60%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: scale(1);
+    } 
+    .btn-commander:hover 
+    {
+        transform: scale(1.05);       
+        cursor: pointer;
+    }
+
+}
+
+/* Mobile */
+
+/* Ecrans entre 580 px et 768 px */
+
+@media screen and (min-width: 380px) and (max-width: 768px)
+{
+
+     /* ENTETE DE PAGE */
+
+    header .panier img
+    {
+        height: 1.5em;
+        margin: 0.6em;
+    }
+
+    header .logo img
+    {
+        width: 8em;
+    }
+
+    /* CORPS DE PAGE */
+
+    /* Titre des pages */
+
+    .row .col h2
+    {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .row form h3
+    {
+        color: rgb(255,165,0);
+        padding-top: 0.5em;
+    }
+
+    /* Page d'Accueil */
+
+    main
+    {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .produits 
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 450px;
+        width: 20em;
+        box-shadow: 1px 1px 7px 1px;
+        transform: scale(1);
+        margin-top: 1.5em;
+    }
+
+    .teddies-img
+    {    
+        width: 20em;
+        height: 15em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .teddies-prix
+    {
+        justify-content: center;   
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.3em;
+        border: solid black;
+        color: black;
+        width: 7em;  
+        margin-left: 4em;
+        background-color: white ;
+    }
+
+    /* Page Produit */
+
+    .teddy-img
+    {    
+        width: 20em;
+        height: 15em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .produit
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 580px;
+        width: 20em;
+        box-shadow: 1px 1px 7px 1px;
+    }
+
+    .teddy-name
+    {
+        color: rgb(182, 83, 253);
+        font-family: Shrikhand;
+    }
+
+    .teddy-description
+    {
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .teddy-couleurs-quantite
+    {
+        display: flex;
+        margin-left: 0.5em;
+    }
+
+    .teddy-couleurs
+    {
+        padding-right: 4em;  
+    }
+
+    .teddy-prix
+    {
+        margin-left: 6.5em;
+        margin-bottom: 0.5em;
+        width: 4em;
+    }
+
+    .btn-panier
+    {
+        border-radius: 50px;    
+        font-size: 1.2em;
+        padding: 0.5em 3em 0.5em 3em;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: scale(1);
+    } 
+
+    .btn-panier:hover 
+    {
+        transform: scale(1.05);       
+        cursor: pointer;
+    }
+   
+    /* Formulaire */
+
+    .formulaire
+    {
+        background-color: #fff;     
+        justify-content: center;
+    }
+
+    .le-formulaire h3
+    {
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    .form-group input
+    {
+        border-radius: 25px;
+        width: 20em;   
+        padding: 1em;
+    }
+
+    .formulaire .form-group 
+    {
+        padding: 1em;
+        font-size: 1.2em;
+    }
+
+    /* Bouton Commander */
+
+    .btn-commander
+    {
+        margin-left: 3em;
+        border-radius: 50px;    
+        font-size: 1em;
+        width: 80%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: scale(1);
+    } 
+    .btn-commander:hover 
+    {
+        transform: scale(1.05);       
+        cursor: pointer;
+    }
+    /* PIED DE PAGE */
+
+    footer
+    {
+        margin-top: 1.3em;
+        background-color: #f3e9f1;  
+        padding-top: 1em;  
+        width: 100%; 
+    }
+
+    footer h3
+    {
+        color: rgb(182, 83, 253);
+        font-family: Shrikhand;
+        font-size: 1.5em;
+    }
+
 }
