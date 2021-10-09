@@ -81,8 +81,7 @@ btn_panier.addEventListener("click", function (e) {
             }else {
                 monPanier.push(objet)
             }
-        });
-        
+        })        
         const onlinePanier = JSON.stringify(monPanier)
         localStorage.setItem("panier", onlinePanier)
         // alert("Article récupéré")

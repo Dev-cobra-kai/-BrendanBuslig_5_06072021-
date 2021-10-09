@@ -30,12 +30,12 @@ if (monPanier == null || monPanier == 0) {
         const quantity = parseInt(monPanier[j].quantite, 10);
         panierPlein.innerHTML +=
             `<tbody>
-                <tr>
-                    <td>${monPanier[j].nom}</td>
-                    <td>${monPanier[j].couleur}</td>
-                    <td>${monPanier[j].quantite}</td>
-                    <td>${monPanier[j].prix}</td>
-                    <td>${(prix * quantity)} €</td>                
+                <tr class="panier-body">
+                    <td class="panier-nom">${monPanier[j].nom}</td>
+                    <td class="panier-couleur">${monPanier[j].couleur}</td>
+                    <td class="panier-quantite">${monPanier[j].quantite}</td>
+                    <td class="panier-prix-unitaire">${monPanier[j].prix}</td>
+                    <td class="panier-prix-total">${(prix * quantity)} €</td>                
                     <td><button class="btn-supprimer"> Supprimer </button></td>
                 </tr>
             </tbody>`;
@@ -111,11 +111,11 @@ console.log(totalPanier);
 prixTotal = document.getElementById("panier-footer");
 prixTotal.innerHTML =
     `<tfoot>
-        <tr>
+        <tr >
             <td></td>
             <td></td>
-            <th>Montant Total</th>
-            <th>${totalPanier} €</th>
+            <th>Montant Total :</th>
+            <th class="montant-total">${totalPanier} €</th>
         </tr
     </tfoot>`;
 
@@ -294,21 +294,21 @@ const btn_commander = document.getElementById("btn-commander");
 btn_commander.addEventListener("click", function (e) {
     e.preventDefault();
 
-    let contact = {
+    const contact = {
         lastName: document.getElementById("lastName").value,
         firstName: document.getElementById("firstName").value,
         address: document.getElementById("address").value,
         city: document.getElementById("city").value,
         email: document.getElementById("email").value,
     }
+    console.log(contact);
 
-    const onlineFormulaire = JSON.stringify(contact)
-    localStorage.setItem("contact", onlineFormulaire);
+    const onlineContact = JSON.stringify(contact)
+    localStorage.setItem("contact", onlineContact);
 
     const panierForm = {
         monPanier, contact,
-    };
-
+    }
     console.log(panierForm);
 
     // Envoyer le résultat au back-end
@@ -321,31 +321,32 @@ btn_commander.addEventListener("click", function (e) {
     });
 
     console.log(objetServeur);
-
-    objetServeur.then(async function (response) {
-        try {
-            const contenu = await response.json();
-            console.log(contenu);
-
-            if (response.ok) {
-                console.log("Résultat de response.ok : ${response.ok}");
-
-                console.log("id de response");
-                console.log("contenu._id");
-
-                localStorage.setItem("responseId,commandeId")
-
-                window.location = "commande.html";
-
-            } else {
-                console.log("Réponse du serveur : ${response.status}");
-                alert("Problème avec le serveur : erreur ${response.status}")
-            };
-
-        } catch (e) {
-            console.log(e);
-        }
-    })
-
 });
+
+    // objetServeur.then(async function (response) {
+    //     try {
+    //         const contenu = await response.json();
+    //         console.log(contenu);
+
+    //         if (response.ok) {
+    //             console.log("Résultat de response.ok : ${response.ok}");
+
+    //             console.log("id de response");
+    //             console.log("contenu._id");
+
+    //             localStorage.setItem("responseId,commandeId")
+
+    //             window.location = "commande.html";
+
+    //         } else {
+    //             console.log("Réponse du serveur : ${response.status}");
+    //             alert("Problème avec le serveur : erreur ${response.status}")
+    //         };
+
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    // })
+
+// });
 

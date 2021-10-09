@@ -203,7 +203,7 @@ main
 
 .le-panier .col .vider-panier
 {
-    margin: 2em; 
+    margin: 1em; 
 }
 
 .votre-panier
@@ -211,6 +211,11 @@ main
     display: flex;
     flex-direction: column;
     padding: 0.5em;
+}
+
+.montant-total
+{
+    padding: 0.8em;
 }
 
 /* Formulaire */
