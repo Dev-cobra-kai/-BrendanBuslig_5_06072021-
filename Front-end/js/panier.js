@@ -40,7 +40,7 @@ if (monPanier == null || monPanier == 0) {
                 </tr>
             </tbody>`;
 
-        let ajouterTeddy = [];
+        var ajouterTeddy = [];
         for (m = 0; m < monPanier[j].quantite; m++) {
             ajouterTeddy.push(monPanier[j].id);
         }
@@ -306,9 +306,11 @@ btn_commander.addEventListener("click", function (e) {
     const onlineContact = JSON.stringify(contact)
     localStorage.setItem("contact", onlineContact);
 
+    products = [ajouterTeddy];
+
     const panierForm = {
-        monPanier, contact,
-    }
+        contact, products,
+    };
     console.log(panierForm);
 
     // Envoyer le résultat au back-end
@@ -321,7 +323,6 @@ btn_commander.addEventListener("click", function (e) {
     });
 
     console.log(objetServeur);
-});
 
     // objetServeur.then(async function (response) {
     //     try {
@@ -343,10 +344,10 @@ btn_commander.addEventListener("click", function (e) {
     //             alert("Problème avec le serveur : erreur ${response.status}")
     //         };
 
-    //     } catch (e) {
-    //         console.log(e);
+    //     } catch (error) {
+    //         console.log(error);
     //     }
     // })
 
-// });
+});
 
