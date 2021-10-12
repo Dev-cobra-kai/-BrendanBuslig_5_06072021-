@@ -40,7 +40,7 @@ if (monPanier == null || monPanier == 0) {
                 </tr>
             </tbody>`;
 
-        var ajouterTeddy = [];
+        let ajouterTeddy = [];
         for (m = 0; m < monPanier[j].quantite; m++) {
             ajouterTeddy.push(monPanier[j].id);
         }
@@ -306,10 +306,10 @@ btn_commander.addEventListener("click", function (e) {
     const onlineContact = JSON.stringify(contact)
     localStorage.setItem("contact", onlineContact);
 
-    products = [ajouterTeddy];
+    // products = [ajouterTeddy];
 
     const panierForm = {
-        contact, products,
+        contact, monPanier,
     };
     console.log(panierForm);
 
@@ -324,30 +324,30 @@ btn_commander.addEventListener("click", function (e) {
 
     console.log(objetServeur);
 
-    // objetServeur.then(async function (response) {
-    //     try {
-    //         const contenu = await response.json();
-    //         console.log(contenu);
+    objetServeur.then(async function (response) {
+        try {
+            const contenu = await response.json();
+            console.log(contenu);
 
-    //         if (response.ok) {
-    //             console.log("Résultat de response.ok : ${response.ok}");
+            // if (response.ok) {
+            //     console.log("Résultat de response.ok : ${response.ok}");
 
-    //             console.log("id de response");
-    //             console.log("contenu._id");
+            //     console.log("id de response");
+            //     console.log("contenu._id");
 
-    //             localStorage.setItem("responseId,commandeId")
+            //     localStorage.setItem("responseId,commandeId")
 
-    //             window.location = "commande.html";
+            //     window.location = "commande.html";
 
-    //         } else {
-    //             console.log("Réponse du serveur : ${response.status}");
-    //             alert("Problème avec le serveur : erreur ${response.status}")
-    //         };
+            // } else {
+            //     console.log("Réponse du serveur : ${response.status}");
+            //     alert("Problème avec le serveur : erreur ${response.status}")
+            // };
 
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // })
+        } catch (e) {
+            console.log(e);
+        }
+    })
 
 });
 

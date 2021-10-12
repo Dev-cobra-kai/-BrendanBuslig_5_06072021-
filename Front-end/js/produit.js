@@ -76,7 +76,7 @@ btn_panier.addEventListener("click", function (e) {
 
     if (monPanier) {
         monPanier.forEach(function(element) {
-            if(element.id === objet.id && element.couleur === objet.couleur) {
+            if(element.id === objet.id && element.name === objet.name && element.couleur === objet.couleur) {
                 element.quantite += objet.quantite
             }else {
                 monPanier.push(objet)
