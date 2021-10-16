@@ -1,12 +1,21 @@
 // Récupération de ID de la commande
+const commandeId = localStorage.getItem("commandeId");
+console.log(`commandeId : ${commandeId}`);
+
+const totalPanier = localStorage.getItem("totalPanier");
+console.log(`totalPanier : ${totalPanier}`);
+
 let numeroCommande = document.getElementById("numero-commande");
-let commandeId = JSON.parse(localStorage.getItem("commandeId"));
 numeroCommande.innerHTML = commandeId;
 
 let prixCommande = document.getElementById("prix-commande");
-let totalId = JSON.parse(localStorage.getItem("totalPanier"));
-prixCommande.innerHTML = totalId.prixTotal;
+prixCommande.innerHTML = totalPanier;
 
-localStorage.clear(); 
+
+// Suppression de la commande
+setTimeout(function() {
+    localStorage.clear();
+    window.location = "panier.html";
+}, 5000);
 
 

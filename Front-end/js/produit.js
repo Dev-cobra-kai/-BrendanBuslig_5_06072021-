@@ -1,4 +1,4 @@
-
+// Récupération des données de l'API + affichage de l'élément
 const produitId = getProduitId()
 
 function getProduitId() {
@@ -17,7 +17,7 @@ fetch(`http://localhost:3000/api/teddies/${produitId}`)
         console.log("Erreur : " + error);
     })
 
-// Affichage du Teddy
+// Affichage d'un Teddy
 function displayProduit(produit) {
 
     document.getElementById("teddy-img").src = produit.imageUrl
@@ -59,43 +59,37 @@ btn_panier.addEventListener("click", function (e) {
     // JSON.parse => convertit les données JSON en objet Javascript
     // JSON.stringify => convertit en JSON
 
+    // Envoie au local storage
     let monPanier = JSON.parse(localStorage.getItem("panier"));
 
     console.log(monPanier);
 
-    // alert("Article ajouté au panier !!!")
+    alert("Article ajouté au panier !!!")
 
-    //     const popupConfirmation = function () {
-    //         if (window.confirm(`${produitId} a bien été ajouté au panier
-    // Consultez le panier OK ou revenir à l'accueil ANNULER`)) {
-    //             window.location.href = "panier.html"
-    //         } else {
-    //             window.location.href = "../index.html"
-    //         }
-    //     }
+    // La quantité des tedddies dans le panier
+    if (monPanier && monPanier.length > 0) {
+        const panierQuantite = monPanier.find(
+            (element) =>
+                element.id === objet.id && element.couleur === objet.couleur)
 
-    if (monPanier) {
-        monPanier.forEach(function(element) {
-            if(element.id === objet.id && element.name === objet.name && element.couleur === objet.couleur) {
-                element.quantite += objet.quantite
-            }else {
-                monPanier.push(objet)
-            }
-        })        
+        if (panierQuantite) {
+            const index = monPanier.indexOf(panierQuantite)
+            panierQuantite.quantite += objet.quantite
+            monPanier[index] = panierQuantite
+        } else {
+            monPanier.push(objet)
+        }
+
         const onlinePanier = JSON.stringify(monPanier)
         localStorage.setItem("panier", onlinePanier)
-        // alert("Article récupéré")
-        // popupConfirmation();
 
     } else {
         monPanier = [];
         monPanier.push(objet);
         const onlinePanier = JSON.stringify(monPanier)
         localStorage.setItem("panier", onlinePanier)
-        // alert("Article non récupéré")
         console.log(monPanier);
         console.log(objet);
-        // popupConfirmation();
     }
 
 })

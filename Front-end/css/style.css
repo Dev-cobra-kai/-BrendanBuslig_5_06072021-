@@ -189,7 +189,7 @@ main
     cursor: pointer;
 }
 
-/* Panier */
+/* Page Panier */
 
 .le-panier 
 {
@@ -250,9 +250,10 @@ main
 
 .btn-commander
 {
-    margin-left: 28em;
+    margin-left: 35em;
     border-radius: 50px;    
     font-size: 1em;
+    width: 40%;
     padding: 1em 10em 1em 10em;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transform: scale(1);
@@ -262,6 +263,8 @@ main
     transform: scale(1.05);       
     cursor: pointer;
 }
+
+/* Page Commande */
 
 /* Validation Commande */
 
@@ -281,6 +284,21 @@ main
     font-size: 1.5em;
     color: rgb(182, 83, 253);
     font-family: Shrikhand;
+}
+
+.numero-commande
+{
+    color: rgb(182, 83, 253);
+}
+
+.prix-commande
+{
+    color: rgb(182, 83, 253);
+}
+
+.euro
+{
+    color: rgb(182, 83, 253);
 }
 
 /* PIED DE PAGE */
@@ -430,6 +448,8 @@ footer h3
     margin-left: 12em;
     margin-bottom: 0.7em;
     }
+
+    /* Page Panier */
 
     /* Formulaire */
 
@@ -607,6 +627,8 @@ footer h3
         margin-bottom: 0.7em;
         width: 5em;
     }
+
+    /* Page Panier */
    
     /* Formulaire */
 
@@ -801,6 +823,8 @@ footer h3
         cursor: pointer;
     }
    
+    /* Page Panier */
+
     /* Formulaire */
 
     .formulaire
