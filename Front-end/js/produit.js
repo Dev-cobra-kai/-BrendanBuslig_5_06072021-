@@ -54,43 +54,59 @@ btn_panier.addEventListener("click", function (e) {
         prix: price,
     }
 
+    // function pasdenegatif(){
+    //     if ((document.getElementById('selection-quantite').value)<0){
+    //       alert ('Vous ne pouvez pas mettre de quantité négative.');
+    //       return false;
+    //       }
+    //     return true;
+    //     }
+
+    //     pasdenegatif ()
+
+
     /************************************* LOCAL STORAGE *********************************/
 
     // JSON.parse => convertit les données JSON en objet Javascript
     // JSON.stringify => convertit en JSON
 
-    // Envoie au local storage
-    let monPanier = JSON.parse(localStorage.getItem("panier"));
-
-    console.log(monPanier);
-
-    alert("Article ajouté au panier !!!")
-
-    // La quantité des tedddies dans le panier
-    if (monPanier && monPanier.length > 0) {
-        const panierQuantite = monPanier.find(
-            (element) =>
-                element.id === objet.id && element.couleur === objet.couleur)
-
-        if (panierQuantite) {
-            const index = monPanier.indexOf(panierQuantite)
-            panierQuantite.quantite += objet.quantite
-            monPanier[index] = panierQuantite
-        } else {
-            monPanier.push(objet)
-        }
-
-        const onlinePanier = JSON.stringify(monPanier)
-        localStorage.setItem("panier", onlinePanier)
+    if ((document.getElementById('selection-quantite').value) < 0) {
+        alert("Vous ne pouvez pas mettre de quantité négative");
 
     } else {
-        monPanier = [];
-        monPanier.push(objet);
-        const onlinePanier = JSON.stringify(monPanier)
-        localStorage.setItem("panier", onlinePanier)
-        console.log(monPanier);
-        console.log(objet);
-    }
 
+        // Envoie au local storage
+        let monPanier = JSON.parse(localStorage.getItem("panier"));
+
+        console.log(monPanier);
+
+        alert("Article ajouté au panier !!!")
+
+        // La quantité des tedddies dans le panier
+        if (monPanier && monPanier.length > 0) {
+            const panierQuantite = monPanier.find(
+                (element) =>
+                    element.id === objet.id && element.couleur === objet.couleur)
+
+            if (panierQuantite) {
+                const index = monPanier.indexOf(panierQuantite)
+                panierQuantite.quantite += objet.quantite
+                monPanier[index] = panierQuantite
+            } else {
+                monPanier.push(objet)
+            }
+
+            const onlinePanier = JSON.stringify(monPanier)
+            localStorage.setItem("panier", onlinePanier)
+
+        } else {
+            monPanier = [];
+            monPanier.push(objet);
+            const onlinePanier = JSON.stringify(monPanier)
+            localStorage.setItem("panier", onlinePanier)
+            console.log(monPanier);
+            console.log(objet);
+        }
+    }
 })
 
