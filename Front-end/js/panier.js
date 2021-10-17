@@ -50,7 +50,7 @@ if (monPanier == null || monPanier == 0) {
                 </tr>
             </tbody>`;
 
-        var ajouterTeddy = [];
+        let ajouterTeddy = [];
         for (m = 0; m < monPanier[j].quantite; m++) {
             ajouterTeddy.push(monPanier[j].id);
         }

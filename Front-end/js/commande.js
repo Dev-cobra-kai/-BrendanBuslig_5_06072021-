@@ -15,7 +15,7 @@ prixCommande.innerHTML = totalPanier;
 // Suppression de la commande
 setTimeout(function() {
     localStorage.clear();
-    window.location = "panier.html";
-}, 5000);
+    window.location.href = "panier.html";
+}, 8000);
 
 
