@@ -43,7 +43,7 @@ if (monPanier == null || monPanier == 0) {
                 <tr class="panier-body">
                     <td class="panier-nom">${monPanier[j].nom}</td>
                     <td class="panier-couleur">${monPanier[j].couleur}</td>
-                    <td class="panier-quantite">${monPanier[j].quantite}</td>
+                    <td class="panier-quantite"><input type="number" class="input-quantite" value="${monPanier[j].quantite}"></td>
                     <td class="panier-prix-unitaire">${monPanier[j].prix}</td>
                     <td class="panier-prix-total">${(prix * quantity)} €</td>                
                     <td><button class="btn-supprimer"> Supprimer </button></td>
@@ -56,6 +56,7 @@ if (monPanier == null || monPanier == 0) {
         }
     }
 }
+
 
 // Supprimer un article du panier
 function supprimerArticle() {
@@ -165,7 +166,7 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (validLastName(form.lastName) && validFirstName(form.firstName) && validAddress(form.address) && validCity(form.city) && validEmail(form.email)) {
         form.submit();
-    } 
+    }
 });
 
 //******************* Validation NOM *********************
@@ -304,7 +305,7 @@ btn_commander.addEventListener("click", function (e) {
     e.preventDefault();
 
     // Validité formulaire lorsque le formulaire est vide
-    if (monPanier == null ) {
+    if (monPanier == null) {
         alert("Votre panier est vide");
 
     } else if (validLastName(form.lastName) == "" || validFirstName(form.firstName) == "" || validAddress(form.address) == "" || validCity(form.city) == "" || validEmail(form.email) == "") {
@@ -351,10 +352,12 @@ btn_commander.addEventListener("click", function (e) {
             try {
                 const contenu = await commande.json();
                 console.log(contenu);
+               
+                window.location.href = `commande.html?orderId=${contenu.orderId}`
 
-                localStorage.setItem("commandeId", contenu.orderId)
-
-                window.location = "commande.html";
+                // document.location = `commande.html?orderId=${contenu.orderId}`;
+                // localStorage.setItem("commandeId", contenu.orderId)
+                // window.location = "commande.html";
 
             } catch (erreur) {
                 console.log(erreur);

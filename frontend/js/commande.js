@@ -1,5 +1,10 @@
-// Récupération de ID de la commande
-const commandeId = localStorage.getItem("commandeId");
+// Récupération de ID de la commande dans l'URL
+
+const idUrl = window.location.search;
+
+const commandeId = idUrl.slice(9);
+
+// const commandeId = localStorage.getItem("commandeId");
 console.log(`commandeId : ${commandeId}`);
 
 const totalPanier = localStorage.getItem("totalPanier");
@@ -13,7 +18,7 @@ prixCommande.innerHTML = totalPanier;
 
 
 // Suppression de la commande
-setTimeout(function() {
+setTimeout(function () {
     localStorage.clear();
     window.location.href = "panier.html";
 }, 8000);

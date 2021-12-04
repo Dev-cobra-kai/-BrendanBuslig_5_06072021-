@@ -189,6 +189,11 @@ main
     cursor: pointer;
 }
 
+.selection-quantite
+{
+    text-align: center;
+}
+
 /* Page Panier */
 
 .le-panier 
@@ -216,6 +221,13 @@ main
 .montant-total
 {
     padding: 0.8em;
+}
+
+.input-quantite
+{
+    font-size: 1em;
+    width: 6.5em;
+    text-align: center;
 }
 
 /* Formulaire */
