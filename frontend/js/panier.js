@@ -57,6 +57,18 @@ if (monPanier == null || monPanier == 0) {
     }
 }
 
+// Modifier la quantité
+// function modifierQuantite() {
+
+//     let inputQuantity = document.querySelectorAll(".input-quantite");
+
+//     for (let n = 0; n < inputQuantity.length; n++) {
+//         totalPanier.addEventListener("change", function (e) {
+//             e.preventDefault();
+//         })
+//     }
+// }
+// modifierQuantite()
 
 // Supprimer un article du panier
 function supprimerArticle() {
@@ -352,7 +364,7 @@ btn_commander.addEventListener("click", function (e) {
             try {
                 const contenu = await commande.json();
                 console.log(contenu);
-               
+
                 window.location.href = `commande.html?orderId=${contenu.orderId}`
 
                 // document.location = `commande.html?orderId=${contenu.orderId}`;
