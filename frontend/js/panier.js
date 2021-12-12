@@ -43,7 +43,7 @@ if (monPanier == null || monPanier == 0) {
                 <tr class="panier-body">
                     <td class="panier-nom">${monPanier[j].nom}</td>
                     <td class="panier-couleur">${monPanier[j].couleur}</td>
-                    <td class="panier-quantite"><input type="number" class="input-quantite" value="${monPanier[j].quantite}"></td>
+                    <td class="panier-quantite"><input type="number" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"></td>
                     <td class="panier-prix-unitaire">${monPanier[j].prix}</td>
                     <td class="panier-prix-total">${(prix * quantity)} €</td>                
                     <td><button class="btn-supprimer"> Supprimer </button></td>
@@ -57,18 +57,6 @@ if (monPanier == null || monPanier == 0) {
     }
 }
 
-// Modifier la quantité
-// function modifierQuantite() {
-
-//     let inputQuantity = document.querySelectorAll(".input-quantite");
-
-//     for (let n = 0; n < inputQuantity.length; n++) {
-//         totalPanier.addEventListener("change", function (e) {
-//             e.preventDefault();
-//         })
-//     }
-// }
-// modifierQuantite()
 
 // Supprimer un article du panier
 function supprimerArticle() {
@@ -142,6 +130,37 @@ if (panierVide() == false) {
     </tfoot>`;
 
     localStorage.setItem("totalPanier", JSON.stringify(totalPanier));
+}
+
+// Modifier la quantité dans le panier
+function modifierQuantite() {
+
+    let inputQuantity = document.querySelectorAll(".input-quantite");
+
+    for (let n = 0; n < inputQuantity.length; n++) {
+        inputQuantity[n].addEventListener("change", function (e) {
+            e.preventDefault();
+
+
+        })
+    }
+}
+modifierQuantite()
+
+// Fonction calculant le prix total du panier
+function prixTotal() {
+    let calculerPrixTotal = [];
+    for (m = 0; m < monPanier[j].quantite; m++) {
+        calculerPrixTotal.push(monPanier[j].id)
+    }
+}
+
+// Fonction calculant le montant total du panier
+function montantTotal() {
+    let calculerMontantTotal = [];
+    for (m = 0; m < monPanier[j].quantite; m++) {
+        calculerMontantTotal.push(monPanier[j].id);
+    }
 }
 
 //*********************** LE FORMULAIRE ************************
