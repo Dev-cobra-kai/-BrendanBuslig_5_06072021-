@@ -70,8 +70,8 @@ btn_panier.addEventListener("click", function (e) {
     // JSON.parse => convertit les données JSON en objet Javascript
     // JSON.stringify => convertit en JSON
 
-    if ((document.getElementById("selection-quantite").value) < 0) {
-        alert("Vous ne pouvez pas mettre de quantité négative");
+    if ((document.getElementById("selection-quantite").value) <= 0) {
+        alert("Vous n'avez pas mis de quantité");
 
     } else {
 

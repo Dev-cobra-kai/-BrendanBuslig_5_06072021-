@@ -60,8 +60,6 @@ function modifierQuantite() {
 
     let inputQuantity = document.querySelectorAll(".input-quantite");
 
-    
-
     for (let n = 0; n < inputQuantity.length; n++) {
         inputQuantity[n].addEventListener("change", function (e) {
             e.preventDefault();
@@ -75,7 +73,7 @@ function modifierQuantite() {
             });
             localStorage.setItem("panier", JSON.stringify(monPanier))
             montantTotal()
-        
+
         })
     }
 }
@@ -332,12 +330,15 @@ const btn_commander = document.getElementById("btn-commander");
 btn_commander.addEventListener("click", function (e) {
     e.preventDefault();
 
-    // Validité formulaire lorsque le formulaire est vide
-     if (monPanier == null) {
+    // Validité lorsque le formulaire est vide
+    if (monPanier == null) {
         alert("Votre panier est vide");
 
     } else if (validLastName(form.lastName) == "" || validFirstName(form.firstName) == "" || validAddress(form.address) == "" || validCity(form.city) == "" || validEmail(form.email) == "") {
         alert("Remplir le formulaire");
+
+    // } else if (totalPanier == 0) {
+    //     alert("Vous n'avez pas mis de quantité");
 
     } else {
 
@@ -365,7 +366,6 @@ btn_commander.addEventListener("click", function (e) {
         console.log(panierForm);
 
         // Envoyer le résultat au back-end
-
         const objetServeur = fetch("http://localhost:3000/api/teddies/order", {
             method: "POST",
             body: JSON.stringify(panierForm),
