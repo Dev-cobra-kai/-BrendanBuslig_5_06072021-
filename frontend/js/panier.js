@@ -42,7 +42,7 @@ if (monPanier == null || monPanier == 0) {
                 <tr class="panier-body">
                     <td class="panier-nom">${monPanier[j].nom}</td>
                     <td class="panier-couleur">${monPanier[j].couleur}</td>
-                    <td class="panier-quantite"><input type="number" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"><input id="productId" type="hidden" value="${monPanier[j].id}"></td>
+                    <td class="panier-quantite"><input type="number" min="0" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"><input id="productId" type="hidden" value="${monPanier[j].id}"></td>
                     <td class="panier-prix-unitaire">${monPanier[j].prix}</td>               
                     <td><button class="btn-supprimer"> Supprimer </button></td>
                 </tr>
@@ -53,13 +53,14 @@ if (monPanier == null || monPanier == 0) {
             ajouterTeddy.push(monPanier[j].id);
         }
     }
-
 }
 
 // Modifier la quantité dans le panier
 function modifierQuantite() {
 
     let inputQuantity = document.querySelectorAll(".input-quantite");
+
+    
 
     for (let n = 0; n < inputQuantity.length; n++) {
         inputQuantity[n].addEventListener("change", function (e) {
@@ -72,12 +73,10 @@ function modifierQuantite() {
                     element.quantite = e.target.value
                 }
             });
-
             localStorage.setItem("panier", JSON.stringify(monPanier))
             montantTotal()
-
+        
         })
-
     }
 }
 modifierQuantite()
@@ -334,7 +333,7 @@ btn_commander.addEventListener("click", function (e) {
     e.preventDefault();
 
     // Validité formulaire lorsque le formulaire est vide
-    if (monPanier == null) {
+     if (monPanier == null) {
         alert("Votre panier est vide");
 
     } else if (validLastName(form.lastName) == "" || validFirstName(form.firstName) == "" || validAddress(form.address) == "" || validCity(form.city) == "" || validEmail(form.email) == "") {

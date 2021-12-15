@@ -375,7 +375,6 @@ footer h3
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-
     }
 
     .produits 
@@ -507,7 +506,6 @@ footer h3
         transform: scale(1.05);       
         cursor: pointer;
     }
-
 }
 
 /* Tablette */
@@ -521,12 +519,17 @@ footer h3
     header .panier img
     {
         height: 1.8em;
-        margin: 0.5em;
     }
 
     header .logo img
     {
-        width: 8em;
+        width: 6em;
+    }
+
+    header .titre
+    {
+        padding-left: 4em;
+    
     }
 
     /* CORPS DE PAGE */
@@ -686,14 +689,13 @@ footer h3
         transform: scale(1.05);       
         cursor: pointer;
     }
-
 }
 
 /* Mobile */
 
-/* Ecrans entre 580 px et 768 px */
+/* Ecrans entre 425 px et 768 px */
 
-@media screen and (min-width: 380px) and (max-width: 768px)
+@media screen and (min-width: 425px) and (max-width: 768px)
 {
 
      /* ENTETE DE PAGE */
@@ -873,6 +875,222 @@ footer h3
         border-radius: 50px;    
         font-size: 1em;
         width: 80%;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: scale(1);
+    } 
+    .btn-commander:hover 
+    {
+        transform: scale(1.05);       
+        cursor: pointer;
+    }
+    /* PIED DE PAGE */
+
+    footer
+    {
+        margin-top: 1.3em;
+        background-color: #f3e9f1;  
+        padding-top: 1em;  
+        width: 100%; 
+    }
+
+    footer h3
+    {
+        color: rgb(182, 83, 253);
+        font-family: Shrikhand;
+        font-size: 1.5em;
+    }
+
+}
+
+/* Mini Mobile */
+
+/* Ecrans entre 320 px et 425 px */
+
+@media screen and (min-width: 320px) and (max-width: 425px)
+{
+
+     /* ENTETE DE PAGE */
+
+    header .panier img
+    {
+        height: 1.5em;
+        margin: 0.6em;
+    }
+
+    header .logo img
+    {
+        width: 5.5em;
+    }
+
+    header .titre h1
+    {
+        font-size: 1.5em;
+    }
+
+    /* CORPS DE PAGE */
+
+    /* Titre des pages */
+
+    .row .col h2
+    {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .row form h3
+    {
+        color: rgb(255,165,0);
+        padding-top: 0.5em;
+    }
+
+    /* Page d'Accueil */
+
+    main
+    {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .produits 
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 450px;
+        width: 18em;
+        box-shadow: 1px 1px 7px 1px;
+        transform: scale(1);
+        margin-top: 1.5em;
+    }
+
+    .teddies-img
+    {    
+        width: 18em;
+        height: 15em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .teddies-prix
+    {
+        justify-content: center;   
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.3em;
+        border: solid black;
+        color: black;
+        width: 7em;  
+        margin-left: 4em;
+        background-color: white ;
+    }
+
+    /* Page Produit */
+
+    .teddy-img
+    {    
+        width: 18em;
+        height: 15em;
+        border-radius: 45px 45px 0px 0px;
+        object-fit: cover;
+    }
+
+    .produit
+    {
+        text-align: center;
+        background: #f3e9f1;
+        border-radius: 50px 50px 50px 50px;
+        height: 580px;
+        width: 18em;
+        box-shadow: 1px 1px 7px 1px;
+    }
+
+    .teddy-name
+    {
+        color: rgb(182, 83, 253);
+        font-family: Shrikhand;
+    }
+
+    .teddy-description
+    {
+        color: rgb(255,165,0);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .teddy-couleurs-quantite
+    {
+        display: flex;
+        margin-left: 0.5em;
+    }
+
+    .teddy-couleurs
+    {
+        padding-right: 2em;  
+    }
+
+    .teddy-prix
+    {
+        margin-left: 4.5em;
+        margin-bottom: 0.5em;
+        width: 5em;
+    }
+
+    .btn-panier
+    {
+        border-radius: 50px;    
+        font-size: 1.2em;
+        padding: 0.5em 3em 0.5em 3em;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transform: scale(1);
+    } 
+
+    .btn-panier:hover 
+    {
+        transform: scale(1.05);       
+        cursor: pointer;
+    }
+   
+    /* Page Panier */
+
+    /* Formulaire */
+
+    .formulaire
+    {
+        background-color: #fff;     
+        justify-content: center;
+    }
+
+    .le-formulaire h3
+    {
+        display: flex;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    .form-group input
+    {
+        border-radius: 25px;
+        width: 18em;   
+        padding: 1em;
+    }
+
+    .formulaire .form-group 
+    {
+        padding: 1em;
+        font-size: 1.2em;
+    }
+
+    /* Bouton Commander */
+
+    .btn-commander
+    {
+        margin-left: 3em;
+        border-radius: 50px;    
+        font-size: 1em;
+        width: 20%;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         transform: scale(1);
     } 
