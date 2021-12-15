@@ -36,16 +36,14 @@ if (monPanier == null || monPanier == 0) {
 } else {
 
     for (j = 0; j < monPanier.length; j++) {
-        const prix = parseInt(monPanier[j].prix, 10);
-        const quantity = parseInt(monPanier[j].quantite, 10);
+
         panierPlein.innerHTML +=
             `<tbody>
                 <tr class="panier-body">
                     <td class="panier-nom">${monPanier[j].nom}</td>
                     <td class="panier-couleur">${monPanier[j].couleur}</td>
-                    <td class="panier-quantite"><input type="number" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"></td>
-                    <td class="panier-prix-unitaire">${monPanier[j].prix}</td>
-                    <td class="panier-prix-total">${(prix * quantity)} €</td>                
+                    <td class="panier-quantite"><input type="number" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"><input id="productId" type="hidden" value="${monPanier[j].id}"></td>
+                    <td class="panier-prix-unitaire">${monPanier[j].prix}</td>               
                     <td><button class="btn-supprimer"> Supprimer </button></td>
                 </tr>
             </tbody>`;
@@ -55,8 +53,34 @@ if (monPanier == null || monPanier == 0) {
             ajouterTeddy.push(monPanier[j].id);
         }
     }
+
 }
 
+// Modifier la quantité dans le panier
+function modifierQuantite() {
+
+    let inputQuantity = document.querySelectorAll(".input-quantite");
+
+    for (let n = 0; n < inputQuantity.length; n++) {
+        inputQuantity[n].addEventListener("change", function (e) {
+            e.preventDefault();
+
+            const itemId = e.target.nextElementSibling.value
+
+            monPanier.forEach((element) => {
+                if (element.id === itemId) {
+                    element.quantite = e.target.value
+                }
+            });
+
+            localStorage.setItem("panier", JSON.stringify(monPanier))
+            montantTotal()
+
+        })
+
+    }
+}
+modifierQuantite()
 
 // Supprimer un article du panier
 function supprimerArticle() {
@@ -99,28 +123,30 @@ function viderPanier() {
 }
 viderPanier()
 
-// Montant Total du panier
-let totalPanier = [];
+// Fonction calculant le montant total du panier
+function montantTotal() {
+    // Montant Total du panier
+    let totalPanier = [];
 
-if (panierVide() == false) {
+    if (panierVide() == false) {
 
-    for (l = 0; l < monPanier.length; l++) {
-        const prix = parseInt(monPanier[l].prix, 10);
-        const quantity = parseInt(monPanier[l].quantite, 10);
-        let prixQuantity = prix * quantity;
-        let montantTotal = prixQuantity;
+        for (l = 0; l < monPanier.length; l++) {
+            const prix = parseInt(monPanier[l].prix, 10);
+            const quantity = parseInt(monPanier[l].quantite, 10);
+            let prixQuantity = prix * quantity;
+            let montantTotal = prixQuantity;
 
-        totalPanier.push(montantTotal)
+            totalPanier.push(montantTotal)
+            console.log(totalPanier);
+        }
+
+        const reducer = (previousValue, currentValue) => previousValue + currentValue;
+        totalPanier = totalPanier.reduce(reducer, 0);
         console.log(totalPanier);
-    }
 
-    const reducer = (previousValue, currentValue) => previousValue + currentValue;
-    totalPanier = totalPanier.reduce(reducer, 0);
-    console.log(totalPanier);
-
-    prixTotal = document.getElementById("panier-footer");
-    prixTotal.innerHTML =
-        `<tfoot>
+        prixTotal = document.getElementById("panier-footer");
+        prixTotal.innerHTML =
+            `<tfoot>
         <tr >
             <td></td>
             <td></td>
@@ -129,39 +155,11 @@ if (panierVide() == false) {
         </tr
     </tfoot>`;
 
-    localStorage.setItem("totalPanier", JSON.stringify(totalPanier));
-}
-
-// Modifier la quantité dans le panier
-function modifierQuantite() {
-
-    let inputQuantity = document.querySelectorAll(".input-quantite");
-
-    for (let n = 0; n < inputQuantity.length; n++) {
-        inputQuantity[n].addEventListener("change", function (e) {
-            e.preventDefault();
-
-
-        })
+        localStorage.setItem("totalPanier", JSON.stringify(totalPanier));
     }
 }
-modifierQuantite()
+montantTotal()
 
-// Fonction calculant le prix total du panier
-function prixTotal() {
-    let calculerPrixTotal = [];
-    for (m = 0; m < monPanier[j].quantite; m++) {
-        calculerPrixTotal.push(monPanier[j].id)
-    }
-}
-
-// Fonction calculant le montant total du panier
-function montantTotal() {
-    let calculerMontantTotal = [];
-    for (m = 0; m < monPanier[j].quantite; m++) {
-        calculerMontantTotal.push(monPanier[j].id);
-    }
-}
 
 //*********************** LE FORMULAIRE ************************
 
