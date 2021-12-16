@@ -42,7 +42,7 @@ if (monPanier == null || monPanier == 0) {
                 <tr class="panier-body">
                     <td class="panier-nom">${monPanier[j].nom}</td>
                     <td class="panier-couleur">${monPanier[j].couleur}</td>
-                    <td class="panier-quantite"><input type="number" min="0" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"><input id="productId" type="hidden" value="${monPanier[j].id}"></td>
+                    <td class="panier-quantite"><input type="number" min="1" orderId="${monPanier[j].quantite}" class="input-quantite" value="${monPanier[j].quantite}"><input id="productId" type="hidden" value="${monPanier[j].id}"></td>
                     <td class="panier-prix-unitaire">${monPanier[j].prix}</td>               
                     <td><button class="btn-supprimer"> Supprimer </button></td>
                 </tr>
