@@ -137,6 +137,7 @@ function montantTotal() {
             console.log(totalPanier);
         }
 
+        // Retourner la valeur précédente et la valeur courante additionnées
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
         totalPanier = totalPanier.reduce(reducer, 0);
         console.log(totalPanier);
@@ -337,8 +338,8 @@ btn_commander.addEventListener("click", function (e) {
     } else if (validLastName(form.lastName) == "" || validFirstName(form.firstName) == "" || validAddress(form.address) == "" || validCity(form.city) == "" || validEmail(form.email) == "") {
         alert("Remplir le formulaire");
 
-    // } else if (totalPanier == 0) {
-    //     alert("Vous n'avez pas mis de quantité");
+        // } else if (totalPanier == 0) {
+        //     alert("Vous n'avez pas mis de quantité");
 
     } else {
 

@@ -1,6 +1,7 @@
 // Récupération des données de l'API + affichage de l'élément
 const produitId = getProduitId()
 
+// Récupération d'un paramètre passé en get de l'URL
 function getProduitId() {
     return new URL(location.href).searchParams.get("id")
 }
